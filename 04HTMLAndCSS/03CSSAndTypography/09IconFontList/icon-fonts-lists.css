@@ -1,0 +1,18 @@
+@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css';
+
+body{
+    margin: 50px;
+}
+
+.icons{
+    margin-left: 30px;
+    margin-bottom: 10px;
+}
+
+/* ul.icons li {
+    list-style-type: none;
+} */
+
+.icons li{
+    list-style-type: none;
+}
