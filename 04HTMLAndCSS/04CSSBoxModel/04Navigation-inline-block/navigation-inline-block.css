@@ -1,0 +1,32 @@
+html {
+    font-family: Helvetica, sans-serif;
+}
+
+body{
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+header{
+    border-bottom: 2px solid black;
+}
+
+header h1,
+header nav{
+    display: inline-block;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    padding: 0 12px;;
+}
+
+nav ul li a {
+    color: #0a9e13;
+    text-decoration: none;
+}
+
+h1{
+    font-family: Gorgia, serif;
+}
