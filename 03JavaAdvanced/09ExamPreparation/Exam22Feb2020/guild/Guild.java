@@ -29,7 +29,7 @@ public class Guild {
         for (Player player : this.roster) {
             if (player.getName().equals(name)) {
                 player.setRank("Member");
-                return;
+                break;
             }
         }
     }
@@ -38,7 +38,7 @@ public class Guild {
         for (Player player : this.roster) {
             if (player.getName().equals(name)) {
                 player.setRank("Trial");
-                return;
+                break;
             }
         }
     }
