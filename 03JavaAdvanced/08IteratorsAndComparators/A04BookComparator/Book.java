@@ -41,9 +41,9 @@ public class Book implements Comparable<Book>{
 
     @Override
     public int compareTo(Book that) {
-        int result = this.getTitle().compareTo(that.getTitle());
-        if(result ==0) {
-            result = this.getYear() - that.getYear();
+        int result = this.getTitle().compareTo(other.getTitle());
+        if (result == 0) {
+            result = this.getYear() - other.getYear();
         }
         return result;
     }
