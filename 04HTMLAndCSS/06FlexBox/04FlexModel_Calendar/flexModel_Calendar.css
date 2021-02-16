@@ -1,0 +1,49 @@
+HTML{
+    box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    text-align: center;
+}
+
+div,
+section{
+    display: flex;
+}
+
+.container{
+    max-width: 65vw;
+    margin: 60px auto;
+}
+
+span{
+    border: 1px solid black;
+    padding: 20px 20px 80px 20px;
+    flex-grow: 1;
+}
+
+.week {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    flex-basis: 50vw;
+    flex-flow: row wrap;
+}
+
+.week span:nth-child(1),
+.week span:nth-child(7){
+    font-size: 1.5rem;
+    flex-basis: 100%;
+}
+
+.notes{
+    flex-direction: column;
+}
+
