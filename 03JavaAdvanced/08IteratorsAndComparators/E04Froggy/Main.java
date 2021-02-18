@@ -5,20 +5,20 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+        while (!input.equals("END")) {
 
-        int[] stones = Arrays.stream(scanner.nextLine().split(", "))
-                .mapToInt(Integer::parseInt)
-                .toArray();
+            int[] stones = Arrays.stream(input.split(", "))
+                    .mapToInt(Integer::parseInt)
+                    .toArray();
+            Lake lake = new Lake(stones);
 
-        Lake lake = new Lake(stones);
-        //Frog
-        Iterator<Integer> froggy = lake.iterator();
-
-        List<String> output = new ArrayList<>();
-        while (froggy.hasNext()){
-            output.add(froggy.next() + "");
+            StringBuilder sb = new StringBuilder();
+            for (Integer n:lake) {
+                sb.append(n).append(", ");
+            }
+            System.out.println(sb.substring(0, sb.lastIndexOf(",")));
+            input = scanner.nextLine();
         }
-
-        System.out.println(String.join(", ", output));
     }
 }

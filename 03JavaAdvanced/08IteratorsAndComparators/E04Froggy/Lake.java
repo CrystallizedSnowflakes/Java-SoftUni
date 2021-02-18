@@ -12,7 +12,7 @@ public class Lake implements Iterable<Integer>{
 
     @Override
     public Iterator<Integer> iterator() {
-        return new Iterator<Integer>() {
+        return new Iterator<>() {
             private int index = 0;
             private int lastEvenIndex = stones.length % 2 == 0
                     ? stones.length - 2
@@ -26,11 +26,12 @@ public class Lake implements Iterable<Integer>{
             // jumps
             public Integer next() {
                 if (index == lastEvenIndex){
+                    int element = stones[lastEvenIndex];
                     index = 1;
-                    return stones[lastEvenIndex];
+                    return element;
                 }
                 int element = stones[index];
-                index += 2;
+                this.index += 2;
                 return element;
             }
         };
