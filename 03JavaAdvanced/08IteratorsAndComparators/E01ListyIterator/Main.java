@@ -14,8 +14,8 @@ public class Main {
 
         ListyIterator listyIterator = new ListyIterator(data);
 
-        String command = "";
-        while (!"END".equals(command = scanner.nextLine())) {
+        String command = scanner.nextLine();
+        while (!"END".equals(command)) {
             switch (command) {
                 case "HasNext":
                     System.out.println(listyIterator.hasNext());
@@ -31,6 +31,7 @@ public class Main {
                     }
                     break;
             }
+            command = scanner.nextLine();
         }
     }
 }
