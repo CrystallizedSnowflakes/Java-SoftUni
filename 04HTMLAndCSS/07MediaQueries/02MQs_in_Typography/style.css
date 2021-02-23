@@ -1,0 +1,63 @@
+body{
+    padding: 0;
+    background: rgb(238, 238, 238);
+    font-family: Helvetica, sans-serif;
+    margin: 50px 200px;
+}
+
+.page{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+header{
+    flex-basis: 100%;
+}
+
+h1, 
+h2,
+h3,
+blockquote{
+    font-family: Georgia, serif;
+    margin: 0;
+    padding: 20px 0; 
+}
+
+header h1{
+    text-transform: uppercase;
+    border-bottom: 3px solid black;
+    padding: 20px 0px;
+}
+
+img{
+    background: rgb(255, 255, 255);
+    border: 5px solid black;
+    padding: 10px;
+    box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.63);
+}
+
+img.right{
+    float: right;
+    margin: 15px 0 15px 15px;
+}
+
+img.left {
+    float: left;
+    margin: 15px 15px 15px 0;
+}
+
+blockquote {
+    border-left: 3px #dddddd solid;
+    padding-left: 30px;
+    float: right;
+    max-width: 40%;
+    font-style: italic;
+    color: #5f5956;
+    font-family: Georgia, serif;
+}
+
+blockquote cite {
+    display: block;
+    padding-top: 50px;
+    float: right;
+}
