@@ -1,0 +1,45 @@
+@media all and (max-width: 600px) {
+  .navigation {
+    display: unset;
+  }
+
+  .navigation-logo-wrapper {
+    justify-content: center;
+    margin: 20px auto;
+  }
+
+  .navigation-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navigation-list-item{
+      width: 120px;
+      margin: 1px;
+  }
+
+  .navigation-list-item:last-of-type{
+      margin-bottom: 20px;
+  }
+
+  .header-img-wrapper{
+      display: none;
+  }
+
+  .header-content{
+      margin-top: 0;
+  }
+
+  .benefits,
+  .info-section{
+    flex-direction: column;
+  }
+
+  .info-section-item{
+      width: unset;
+  }
+
+  .info-section-item-text{
+      margin-bottom: 60px;
+  }
+}

@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://use.fontawesome.com/releases/v5.15.2/css/all.css');
+
+body,
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: 'Helvetica', sans-serif;
+}
+
+.content{
+    max-width: 1250px;
+    margin: 20px auto;
+    background: #66B9F8;
+}
+
+.content-title,
+.content-about-info-title{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.content-title{
+    text-align: center;
+    color: white;
+    padding-top: 90px;
+    padding-bottom: 40px;
+}
+
+.content-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.content-about{
+    max-width: 22%;
+    margin: 0 10px;
+}
+
+.content-about:nth-child(3):hover{
+    cursor: pointer;
+}
+
+.content-about-image{
+    max-width: 300px;
+}
+
+.content-about-image img{
+    width: 100%;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.content-about-info{
+    background: white;
+    margin-top: -5px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.content-about-info-title{
+    color: #FFA125;
+    font-size: 13px;
+    padding: 10px;
+}
+
+.content-about-info-time{
+    display: flex;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.content-about-info-minutes,
+.content-about-info-calendar{
+    color: grey;
+    font-size: 12px;
+    padding-right: 10px;
+}
+
+.content-about-info-text{
+    color: #636363;
+    padding: 10px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.content-about-info-cta{
+    padding: 10px;
+}
+
+.content-about-info-cta a{
+    text-transform: uppercase;
+    color: #FFA125;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.content-about-info-cta a::after{
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900;
+    content: "\f054";
+    padding-left: 5px;
+}
+
+.content-about-btn{
+    margin: 35px 45px 70px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.content-about-btn button{
+    background: transparent;
+    color: white;
+    border-radius: 20px;
+    border: 2px solid white;
+    padding: 8px 18px;
+    font-size: 16px;
+    font-weight: bold;
+}
