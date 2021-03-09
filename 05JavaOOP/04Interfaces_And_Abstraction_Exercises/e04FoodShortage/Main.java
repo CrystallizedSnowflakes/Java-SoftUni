@@ -1,4 +1,4 @@
-package FoodShortage;
+package e04FoodShortage;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,7 +1,8 @@
-package FoodShortage;
-
+package e04FoodShortage;
 
 public class Citizen implements Birthable, Identifiable, Buyer {
+    private static final int INCREASE_FOOD_WITH_FIVE = 10;
+
     private String name;
     private int age;
     private String id;
@@ -52,7 +53,7 @@ public class Citizen implements Birthable, Identifiable, Buyer {
 
     @Override
     public void buyFood() {
-        this.increaseFood();
+        this.increaseFoodWith(INCREASE_FOOD_WITH_FIVE);
     }
 
     @Override
@@ -60,8 +61,8 @@ public class Citizen implements Birthable, Identifiable, Buyer {
         return this.food;
     }
 
-    private void increaseFood(){
-        this.food += 10;
+    private void increaseFoodWith(int amount){
+        this.food += amount;
     }
 
     @Override

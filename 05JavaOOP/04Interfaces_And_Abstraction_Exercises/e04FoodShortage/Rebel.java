@@ -1,6 +1,8 @@
-package FoodShortage;
+package e04FoodShortage;
 
 public class Rebel implements Buyer{
+    private static final int INCREASE_FOOD_WITH_FIVE = 5;
+
     private String name;
     private int age;
     private String group;
@@ -40,7 +42,7 @@ public class Rebel implements Buyer{
 
     @Override
     public void buyFood() {
-        this.increaseFood();
+        this.increaseFoodWith(INCREASE_FOOD_WITH_FIVE);
     }
 
     @Override
@@ -48,7 +50,7 @@ public class Rebel implements Buyer{
         return this.food;
     }
 
-    private void increaseFood() {
-        this.food += 5;
+    private void increaseFoodWith(int amount) {
+        this.food += amount;
     }
 }
