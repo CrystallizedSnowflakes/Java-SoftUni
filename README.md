@@ -1,2 +1,2 @@
 # Java-SoftUni
-Java Basics, Fundamentals, Advanced, OOP
+Homework & Exam Preparation from Java Basics, Java Fundamentals, Java Advanced, OOP with Java
