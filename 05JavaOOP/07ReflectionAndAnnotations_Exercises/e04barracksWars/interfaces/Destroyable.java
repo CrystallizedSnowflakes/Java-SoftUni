@@ -1,0 +1,8 @@
+package e04barracksWars.interfaces;
+
+public interface Destroyable {
+    
+    int getHealth();
+    
+    void setHealth(int health);
+}
