@@ -14,26 +14,29 @@ public class AlarmTest {
     public void mockSensorAndCreateAlarm(){
         // mock sensor
         sensor = Mockito.mock(Sensor.class);
-        alarm = new Alarm(sensor);
+        alarm = new Alarm(sensor); // alarm on pressure < 17 (alarm off) 21 < pressure alarm on
     }
 
+    // alarm on when pressure < 17
     @Test
-    public void testWhenPresserLowerThanLowPressureThresholdThenAlarmShouldBeOn(){
-        Mockito.when(sensor.popNextPressurePsiValue()).thenReturn(15.5);
+    public void testWhenPresserLowerThanLowPressureThreshold_ThenAlarmShouldBeOn(){
+        Mockito.when(sensor.popNextPressurePsiValue()).thenReturn(16.99);
         alarm.check();
         assertTrue(alarm.getAlarmOn());
     }
 
+    // alarm on when pressure > 21
     @Test
-    public void testWhenPresserGreaterThanHighPressureThresholdThenAlarmShouldBeOn(){
-        Mockito.when(sensor.popNextPressurePsiValue()).thenReturn(125.5);
+    public void testWhenPresserGreaterThanHighPressureThreshold_ThenAlarmShouldBeOn(){
+        Mockito.when(sensor.popNextPressurePsiValue()).thenReturn(21.01);
         alarm.check();
         assertTrue(alarm.getAlarmOn());
     }
 
+    // alarm off when pressure between 17 - 21
     @Test
-    public void testWhenNormalPressureThenAlarmShouldBeOff(){
-        Mockito.when(sensor.popNextPressurePsiValue()).thenReturn(18.0);
+    public void testWhenNormalPressure_ThenAlarmShouldBeOff(){
+        Mockito.when(sensor.popNextPressurePsiValue()).thenReturn(17.00);
         alarm.check();
         assertFalse(alarm.getAlarmOn());
     }

@@ -60,6 +60,7 @@
     <option name="width" value="697" />
     <option name="height" value="735" />
   </component>
+  <component name="ProjectId" id="1qInKpiXA4hgYlVSlNp5kAkLkOC" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -152,12 +153,18 @@
       <pane id="PackagesPane" />
     </panes>
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/p06_CustomLinkedList" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -182,87 +189,88 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="p05_CustomLinkedList" />
       <recent name="p06_TirePressureMonitoringSystem" />
       <recent name="p03_IteratorTest" />
       <recent name="p04_BubbleSortTest" />
       <recent name="p02_ExtendedDatabase" />
-      <recent name="p01_Database" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ListIteratorTest">
-    <configuration name="AlarmTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.CustomLinkedListTest.testRemoveReturnsNegativeOneWhenElementIsNotPresent">
+    <configuration name="CustomLinkedListTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DatabaseUnitTesting" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="p06_TirePressureMonitoringSystem.*" />
+          <option name="PATTERN" value="p05_CustomLinkedList.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="p06_TirePressureMonitoringSystem" />
-      <option name="MAIN_CLASS_NAME" value="p06_TirePressureMonitoringSystem.AlarmTest" />
+      <option name="PACKAGE_NAME" value="p05_CustomLinkedList" />
+      <option name="MAIN_CLASS_NAME" value="p05_CustomLinkedList.CustomLinkedListTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AlarmTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CustomLinkedListTest.testRemoveAtEmptyList_ThrownException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DatabaseUnitTesting" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="p06_TirePressureMonitoringSystem.*" />
+          <option name="PATTERN" value="p05_CustomLinkedList.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="p06_TirePressureMonitoringSystem" />
-      <option name="MAIN_CLASS_NAME" value="p06_TirePressureMonitoringSystem.AlarmTest" />
-      <option name="METHOD_NAME" value="test" />
+      <option name="PACKAGE_NAME" value="p05_CustomLinkedList" />
+      <option name="MAIN_CLASS_NAME" value="p05_CustomLinkedList.CustomLinkedListTest" />
+      <option name="METHOD_NAME" value="testRemoveAtEmptyList_ThrownException" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AlarmTest.testWhenNormalPressureThenAlarmShouldBeOff" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CustomLinkedListTest.testRemoveAtOutOfBoundsIndex_ThrownException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DatabaseUnitTesting" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="p06_TirePressureMonitoringSystem.*" />
+          <option name="PATTERN" value="p05_CustomLinkedList.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="p06_TirePressureMonitoringSystem" />
-      <option name="MAIN_CLASS_NAME" value="p06_TirePressureMonitoringSystem.AlarmTest" />
-      <option name="METHOD_NAME" value="testWhenNormalPressureThenAlarmShouldBeOff" />
+      <option name="PACKAGE_NAME" value="p05_CustomLinkedList" />
+      <option name="MAIN_CLASS_NAME" value="p05_CustomLinkedList.CustomLinkedListTest" />
+      <option name="METHOD_NAME" value="testRemoveAtOutOfBoundsIndex_ThrownException" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ListIteratorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CustomLinkedListTest.testRemoveAtWorkingCorrectly" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DatabaseUnitTesting" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="p03_IteratorTest.*" />
+          <option name="PATTERN" value="p05_CustomLinkedList.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="p03_IteratorTest" />
-      <option name="MAIN_CLASS_NAME" value="p03_IteratorTest.ListIteratorTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="p05_CustomLinkedList" />
+      <option name="MAIN_CLASS_NAME" value="p05_CustomLinkedList.CustomLinkedListTest" />
+      <option name="METHOD_NAME" value="testRemoveAtWorkingCorrectly" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ListIteratorTest.testWhenElementsInListIterator_ThenPrint" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CustomLinkedListTest.testRemoveReturnsNegativeOneWhenElementIsNotPresent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DatabaseUnitTesting" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="p03_IteratorTest.*" />
+          <option name="PATTERN" value="p05_CustomLinkedList.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="p03_IteratorTest" />
-      <option name="MAIN_CLASS_NAME" value="p03_IteratorTest.ListIteratorTest" />
-      <option name="METHOD_NAME" value="testWhenElementsInListIterator_ThenPrint" />
+      <option name="PACKAGE_NAME" value="p05_CustomLinkedList" />
+      <option name="MAIN_CLASS_NAME" value="p05_CustomLinkedList.CustomLinkedListTest" />
+      <option name="METHOD_NAME" value="testRemoveReturnsNegativeOneWhenElementIsNotPresent" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -270,14 +278,15 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ListIteratorTest" />
-        <item itemvalue="JUnit.AlarmTest" />
-        <item itemvalue="JUnit.AlarmTest.test" />
-        <item itemvalue="JUnit.ListIteratorTest.testWhenElementsInListIterator_ThenPrint" />
-        <item itemvalue="JUnit.AlarmTest.testWhenNormalPressureThenAlarmShouldBeOff" />
+        <item itemvalue="JUnit.CustomLinkedListTest.testRemoveReturnsNegativeOneWhenElementIsNotPresent" />
+        <item itemvalue="JUnit.CustomLinkedListTest.testRemoveAtEmptyList_ThrownException" />
+        <item itemvalue="JUnit.CustomLinkedListTest.testRemoveAtOutOfBoundsIndex_ThrownException" />
+        <item itemvalue="JUnit.CustomLinkedListTest" />
+        <item itemvalue="JUnit.CustomLinkedListTest.testRemoveAtWorkingCorrectly" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -333,12 +342,39 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/p05_CustomLinkedList/CustomLinkedListTest.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/p05_CustomLinkedList/CustomLinkedListTest.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/runner/manipulation/Filterable.java</url>
+          <line>16</line>
+          <properties class="org.junit.runner.manipulation.Filterable" method="filter">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/DatabaseUnitTesting$DatabaseTest_testWhenElementsLessThanOnePassedToConstructorThenExceptionIsThrown.ic" NAME="DatabaseTest.testWhenElementsLessThanOnePassedToConstructorThenExceptionIsThrown Coverage Results" MODIFIED="1616692525320" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>p01_Database.*</FILTER>
+    <SUITE FILE_PATH="coverage/DatabaseUnitTesting$CustomLinkedListTest.ic" NAME="CustomLinkedListTest Coverage Results" MODIFIED="1617042013171" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>p05_CustomLinkedList.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/DatabaseUnitTesting$AlarmTest_testWhenNormalPressureThenAlarmShouldBeOff.ic" NAME="AlarmTest.testWhenNormalPressureThenAlarmShouldBeOff Coverage Results" MODIFIED="1616702262605" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>p06_TirePressureMonitoringSystem.*</FILTER>
+    <SUITE FILE_PATH="coverage/DatabaseUnitTesting$CustomLinkedListTest_testRemoveWorkingCorrectly.ic" NAME="CustomLinkedListTest.testRemoveWorkingCorrectly Coverage Results" MODIFIED="1617027736304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>p05_CustomLinkedList.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/DatabaseUnitTesting$CustomLinkedListTest_testContainsReturnsFalseOnEmptyList.ic" NAME="CustomLinkedListTest.testContainsReturnsFalseOnEmptyList Coverage Results" MODIFIED="1617029245133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>p05_CustomLinkedList.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/DatabaseUnitTesting$DatabaseTest_testWhenCorrectElementsArePassedThenCreateDatabaseInstance.ic" NAME="DatabaseTest.testWhenCorrectElementsArePassedThenCreateDatabaseInstance Coverage Results" MODIFIED="1616691713033" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>p01_Database.*</FILTER>
@@ -346,23 +382,14 @@
     <SUITE FILE_PATH="coverage/DatabaseUnitTesting$DatabaseTest_testWhenMoreThanSixteenElementsArePassedToConstructorThenExceptionIsThrown.ic" NAME="DatabaseTest.testWhenMoreThanSixteenElementsArePassedToConstructorThenExceptionIsThrown Coverage Results" MODIFIED="1616692353828" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>p01_Database.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/DatabaseUnitTesting$ListIteratorTest_testWhenValidElementsPassedToConstructorThenMoveReturnsCorrectBoolean.ic" NAME="ListIteratorTest.testWhenValidElementsPassedToConstructorThenMoveReturnsCorrectBoolean Coverage Results" MODIFIED="1616700636452" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>p03_IteratorTest.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/DatabaseUnitTesting$AlarmTest_testWhenPresserGreaterThanHighPressureThresholdThenAlarmShouldBeOn.ic" NAME="AlarmTest.testWhenPresserGreaterThanHighPressureThresholdThenAlarmShouldBeOn Coverage Results" MODIFIED="1616702149447" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>p06_TirePressureMonitoringSystem.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/DatabaseUnitTesting$AlarmTest.ic" NAME="AlarmTest Coverage Results" MODIFIED="1616704317379" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/DatabaseUnitTesting$AlarmTest.ic" NAME="AlarmTest Coverage Results" MODIFIED="1616942435200" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>p06_TirePressureMonitoringSystem.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/DatabaseUnitTesting$AlarmTest_testWhenPresserLowerThanLowPressureThresholdThenAlarmShouldBeOn.ic" NAME="AlarmTest.testWhenPresserLowerThanLowPressureThresholdThenAlarmShouldBeOn Coverage Results" MODIFIED="1616702029983" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>p06_TirePressureMonitoringSystem.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/DatabaseUnitTesting$ListIteratorTest.ic" NAME="ListIteratorTest Coverage Results" MODIFIED="1616704600522" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/DatabaseUnitTesting$ListIteratorTest.ic" NAME="ListIteratorTest Coverage Results" MODIFIED="1616944460628" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>p03_IteratorTest.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/DatabaseUnitTesting$DatabaseTest_testWhenElementsIsEmptyThenExceptionIsThrown.ic" NAME="DatabaseTest.testWhenElementsIsEmptyThenExceptionIsThrown Coverage Results" MODIFIED="1616694078389" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>p01_Database.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/DatabaseUnitTesting$BubbleTest_testWhenNotSortedArrayPassedToSortThenArraySortedAsc.ic" NAME="BubbleTest.testWhenNotSortedArrayPassedToSortThenArraySortedAsc Coverage Results" MODIFIED="1616698407009" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>p04_BubbleSortTest.*</FILTER>
@@ -376,14 +403,11 @@
     <SUITE FILE_PATH="coverage/DatabaseUnitTesting$DatabaseTest_testWhenRemoveThenLastElementIsRemoved.ic" NAME="DatabaseTest.testWhenRemoveThenLastElementIsRemoved Coverage Results" MODIFIED="1616693784975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>p01_Database.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/DatabaseUnitTesting$DatabaseTest_testWhenValidElementPassedToAddThenElementIsAddedAtLastPosition.ic" NAME="DatabaseTest.testWhenValidElementPassedToAddThenElementIsAddedAtLastPosition Coverage Results" MODIFIED="1616693357946" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>p01_Database.*</FILTER>
+    <SUITE FILE_PATH="coverage/DatabaseUnitTesting$CustomLinkedListTest_testGetOnEmptyListShouldThrowExceptionWithPositiveIndex.ic" NAME="CustomLinkedListTest.testGetOnEmptyListShouldThrowExceptionWithPositiveIndex Coverage Results" MODIFIED="1617030465628" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>p05_CustomLinkedList.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/DatabaseUnitTesting$DatabaseTest__1_.ic" NAME="DatabaseTest (1) Coverage Results" MODIFIED="1616697681210" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/DatabaseUnitTesting$DatabaseTest.ic" NAME="DatabaseTest Coverage Results" MODIFIED="1616940375054" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>p02_ExtendedDatabase.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/DatabaseUnitTesting$DatabaseTest.ic" NAME="DatabaseTest Coverage Results" MODIFIED="1616694778707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>p01_Database.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/DatabaseUnitTesting$DatabaseTest_testWhenUsernameNullPassedToFindByUsernameThenExceptionIsThrown.ic" NAME="DatabaseTest.testWhenUsernameNullPassedToFindByUsernameThenExceptionIsThrown Coverage Results" MODIFIED="1616697048075" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>p02_ExtendedDatabase.*</FILTER>
@@ -391,20 +415,74 @@
     <SUITE FILE_PATH="coverage/DatabaseUnitTesting$ListIteratorTest_testWhenEmptyListIteratorThenExceptionIsThrown.ic" NAME="ListIteratorTest.testWhenEmptyListIteratorThenExceptionIsThrown Coverage Results" MODIFIED="1616700731877" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>p03_IteratorTest.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/DatabaseUnitTesting$AlarmTest_test.ic" NAME="AlarmTest.test Coverage Results" MODIFIED="1616704066142" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>p06_TirePressureMonitoringSystem.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/DatabaseUnitTesting$CustomLinkedListTest_testRemoveAtOutOfBoundsIndex_ThrownException.ic" NAME="CustomLinkedListTest.testRemoveAtOutOfBoundsIndex_ThrownException Coverage Results" MODIFIED="1617042414304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>p05_CustomLinkedList.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/DatabaseUnitTesting$DatabaseTest_testWhenElementsLessThanOnePassedToConstructorThenExceptionIsThrown.ic" NAME="DatabaseTest.testWhenElementsLessThanOnePassedToConstructorThenExceptionIsThrown Coverage Results" MODIFIED="1616692525320" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>p01_Database.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/DatabaseUnitTesting$AlarmTest_testWhenNormalPressureThenAlarmShouldBeOff.ic" NAME="AlarmTest.testWhenNormalPressureThenAlarmShouldBeOff Coverage Results" MODIFIED="1616702262605" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>p06_TirePressureMonitoringSystem.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/DatabaseUnitTesting$CustomLinkedListTest_testRemoveReturnsNegativeOneWhenElementIsNotPresent.ic" NAME="CustomLinkedListTest.testRemoveReturnsNegativeOneWhenElementIsNotPresent Coverage Results" MODIFIED="1617042622329" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>p05_CustomLinkedList.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/DatabaseUnitTesting$CustomLinkedListTest_testSetShouldThrowException.ic" NAME="CustomLinkedListTest.testSetShouldThrowException Coverage Results" MODIFIED="1617031346610" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>p05_CustomLinkedList.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/DatabaseUnitTesting$ListIteratorTest_testWhenValidElementsPassedToConstructorThenMoveReturnsCorrectBoolean.ic" NAME="ListIteratorTest.testWhenValidElementsPassedToConstructorThenMoveReturnsCorrectBoolean Coverage Results" MODIFIED="1616700636452" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>p03_IteratorTest.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/DatabaseUnitTesting$AlarmTest_testWhenPresserGreaterThanHighPressureThresholdThenAlarmShouldBeOn.ic" NAME="AlarmTest.testWhenPresserGreaterThanHighPressureThresholdThenAlarmShouldBeOn Coverage Results" MODIFIED="1616702149447" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>p06_TirePressureMonitoringSystem.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/DatabaseUnitTesting$CustomLinkedListTest_testRemoveAtEmptyList_ThrownException.ic" NAME="CustomLinkedListTest.testRemoveAtEmptyList_ThrownException Coverage Results" MODIFIED="1617042465955" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>p05_CustomLinkedList.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/DatabaseUnitTesting$DatabaseTest_testWhenElementsIsEmptyThenExceptionIsThrown.ic" NAME="DatabaseTest.testWhenElementsIsEmptyThenExceptionIsThrown Coverage Results" MODIFIED="1616694078389" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>p01_Database.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/DatabaseUnitTesting$CustomLinkedListTest_testGetShouldThrowExceptionWithIndexOutOfBounds.ic" NAME="CustomLinkedListTest.testGetShouldThrowExceptionWithIndexOutOfBounds Coverage Results" MODIFIED="1617031056322" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>p05_CustomLinkedList.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/DatabaseUnitTesting$CustomLinkedListTest_testRemoveAtWorkingCorrectly.ic" NAME="CustomLinkedListTest.testRemoveAtWorkingCorrectly Coverage Results" MODIFIED="1617031766732" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>p05_CustomLinkedList.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/DatabaseUnitTesting$CustomLinkedListTest_testAddWorkingCorrectly.ic" NAME="CustomLinkedListTest.testAddWorkingCorrectly Coverage Results" MODIFIED="1617027731080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>p05_CustomLinkedList.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/DatabaseUnitTesting$DatabaseTest_testWhenValidElementPassedToAddThenElementIsAddedAtLastPosition.ic" NAME="DatabaseTest.testWhenValidElementPassedToAddThenElementIsAddedAtLastPosition Coverage Results" MODIFIED="1616693357946" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>p01_Database.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/DatabaseUnitTesting$DatabaseTest__1_.ic" NAME="DatabaseTest (1) Coverage Results" MODIFIED="1616697681210" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>p02_ExtendedDatabase.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/DatabaseUnitTesting$CustomLinkedListTest_testSetShouldWorkProperly.ic" NAME="CustomLinkedListTest.testSetShouldWorkProperly Coverage Results" MODIFIED="1617031577037" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>p05_CustomLinkedList.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/DatabaseUnitTesting$CustomLinkedListTest_testIndexOfReturnsOnlyFirstOccurrenceOfValue.ic" NAME="CustomLinkedListTest.testIndexOfReturnsOnlyFirstOccurrenceOfValue Coverage Results" MODIFIED="1617028105415" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>p05_CustomLinkedList.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/DatabaseUnitTesting$CustomLinkedListTest_testContainsReturnsFalseIfElementIsNotPresent.ic" NAME="CustomLinkedListTest.testContainsReturnsFalseIfElementIsNotPresent Coverage Results" MODIFIED="1617029362667" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>p05_CustomLinkedList.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/DatabaseUnitTesting$BubbleTest_testWhenEmptyArrayPassedToSortThenEmptyArray.ic" NAME="BubbleTest.testWhenEmptyArrayPassedToSortThenEmptyArray Coverage Results" MODIFIED="1616698640674" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>p04_BubbleSortTest.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/DatabaseUnitTesting$ListIteratorTest_testWhenElementsInListIterator_ThenPrint.ic" NAME="ListIteratorTest.testWhenElementsInListIterator_ThenPrint Coverage Results" MODIFIED="1616703774137" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>p03_IteratorTest.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/DatabaseUnitTesting$AlarmTest_test.ic" NAME="AlarmTest.test Coverage Results" MODIFIED="1616704066142" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>p06_TirePressureMonitoringSystem.*</FILTER>
-    </SUITE>
     <SUITE FILE_PATH="coverage/DatabaseUnitTesting$DatabaseTest_testWhenInvalidElementPassedToAddThenExceptionIsThrown.ic" NAME="DatabaseTest.testWhenInvalidElementPassedToAddThenExceptionIsThrown Coverage Results" MODIFIED="1616694134157" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>p01_Database.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/DatabaseUnitTesting$BubbleTest_testWhenSortedArrayPassedToSortThenSameArray.ic" NAME="BubbleTest.testWhenSortedArrayPassedToSortThenSameArray Coverage Results" MODIFIED="1616698479149" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>p04_BubbleSortTest.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/DatabaseUnitTesting$CustomLinkedListTest_testGetShouldWorkProperly.ic" NAME="CustomLinkedListTest.testGetShouldWorkProperly Coverage Results" MODIFIED="1617030816188" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>p05_CustomLinkedList.*</FILTER>
     </SUITE>
   </component>
   <component name="editorHistoryManager">
