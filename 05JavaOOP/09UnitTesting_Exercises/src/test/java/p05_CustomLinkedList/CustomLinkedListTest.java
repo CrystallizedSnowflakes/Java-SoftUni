@@ -108,7 +108,7 @@ public class CustomLinkedListTest {
         assertFalse(this.list.contains(13));
     }
 
-
+    // indexOf
     @Test
     public void testIndexOfReturnsOnlyFirstOccurrenceOfValue(){
         this.list.add(13);
@@ -118,7 +118,6 @@ public class CustomLinkedListTest {
         assertEquals(list.indexOf(13), 0);
     }
 
-    // indexOf
     @Test
     public void testIndexOfReturnsCorrectValue(){
         for (int i = 0; i < 100; i++) {
