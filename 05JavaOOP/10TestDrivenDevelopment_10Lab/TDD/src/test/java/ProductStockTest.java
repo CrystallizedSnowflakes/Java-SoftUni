@@ -21,22 +21,26 @@ public class ProductStockTest {
 
     // has same amount of products as added or 0 if empty
     @Test
-    public void testGetCountShouldReturnTwo_WhenWtoProductAdded(){
+    public void testGetCountShouldReturnTen_WhenTenProductAreAdded(){
         addProducts();
         // Act & Assert
-        assertEquals(Integer.valueOf(10), instock.getCount());
+        int expectedCount = 10;
+        Integer actualCount = instock.getCount();
+        assertEquals(Integer.valueOf(expectedCount), actualCount);
     }
 
     @Test
     public void testGetCountShouldReturnZero_WhenEmpty(){
         // Act & Assert
-        assertEquals(Integer.valueOf(0), instock.getCount());
+        int expectedCount = 0;
+        Integer actualCount = instock.getCount();
+        assertEquals(Integer.valueOf(expectedCount), actualCount);
     }
 
     @Test
     public void testAddProductShouldStoreTheProductByValidatingWithContains(){
         instock.add(product);
-        Boolean contains = assertNotNullReturnedObject(() -> instock.contains(product)); // no input () -> has only the result
+        Boolean contains = assertNotNullReturnedObject(() -> instock.contains(product)); // Supplier -> no input () -> has only the result
         assertTrue(contains);
     }
 
@@ -44,20 +48,21 @@ public class ProductStockTest {
     public void testAddShouldNotAllowAdditionOfTheSameProductTwice(){
         instock.add(product);
         instock.add(product);
-        Integer count = assertNotNullReturnedObject(() -> instock.getCount());
-        assertEquals(Integer.valueOf(1), count);
+        int expectedCount = 1;
+        Integer actualCount = assertNotNullReturnedObject(() -> instock.getCount()); // Supplier -> no input () -> has only the result
+        assertEquals(Integer.valueOf(expectedCount), actualCount);
     }
 
     @Test
     public void testContainsShouldReturnFalse_WhenProductIsNotPresent(){
         instock.add(product);
-        Boolean contains = assertNotNullReturnedObject(() -> instock.contains(new Product("test_label", 100, 1)));
+        Boolean contains = assertNotNullReturnedObject(() -> instock.contains(new Product("test_label", 100, 1))); // Supplier -> no input () -> has only the result
         assertFalse(contains);
     }
 
     @Test
     public void testContainsShouldReturnFalse_WhenEmpty(){
-        Boolean contains = assertNotNullReturnedObject(() -> instock.contains(product));
+        Boolean contains = assertNotNullReturnedObject(() -> instock.contains(product)); // Supplier -> no input () -> has only the result
         assertFalse(contains);
     }
 
@@ -92,7 +97,9 @@ public class ProductStockTest {
         instock.add(product);
         int quantityBeforeUpdate = product.getQuantity();
         instock.changeQuantity(product.getLabel(), 10);
-        assertEquals(quantityBeforeUpdate + 10, product.getQuantity());
+        Integer expectedUpdatedQuantity = quantityBeforeUpdate + 10;
+        Integer actualUpdatedQuantity = product.getQuantity();
+        assertEquals(expectedUpdatedQuantity, actualUpdatedQuantity);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -107,8 +114,10 @@ public class ProductStockTest {
         instock.add(product);
         /*Product foundByLabel = instock.findByLabel(product.label);
         assertNotNull(foundByLabel);*/
-        Product foundByLabel = assertNotNullReturnedObject(() -> instock.findByLabel(product.label));
-        assertEquals(product.getLabel(), foundByLabel.getLabel());
+        Product foundByLabel = assertNotNullReturnedObject(() -> instock.findByLabel(product.label)); // Supplier -> no input () -> has only the result
+        String expectedLabel = product.getLabel();
+        String actualLabel = foundByLabel.getLabel();
+        assertEquals(expectedLabel, actualLabel);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -125,7 +134,7 @@ public class ProductStockTest {
     }
 
     @Test
-    public void testFindFirstByAlphabeticalOrderShouldReturnCorrectNumberOfProductsThatAreOrderedByAlphabeticalOrder(){
+    public void testFindFirstByAlphabeticalOrderShouldReturnCorrectNumberOfProductsThatAreOrderedAlphabetically(){
         int expectedCount = 5;
         List<String> expectedLabels = addProducts().stream()
                 .sorted(Comparator.comparing(Product::getLabel))
@@ -153,12 +162,14 @@ public class ProductStockTest {
         double lowRange = 0.10;
         double upperRange = 100.50;
         List<Product> expectedProducts = addProducts().stream()
-                .filter(p -> p.getPrice() > lowRange && p.getPrice() <= upperRange)
+                .filter(p -> p.getPrice() > lowRange && p.getPrice() <= upperRange) // predicate - Boolean
                 .sorted(Comparator.comparingDouble(Product::getPrice).reversed())
                 .collect(Collectors.toList());
+
         List<Product> actualProducts = getListFromIterable(instock.findAllInRange(lowRange, upperRange));
 
         assertEquals(expectedProducts.size(), actualProducts.size());
+
         for (int i = 0; i < actualProducts.size(); i++) {
             assertEquals(expectedProducts.get(i).getPrice(), actualProducts.get(i).getPrice(), 0);
         }
@@ -170,7 +181,7 @@ public class ProductStockTest {
         instock.add(new Product("test_Label", product.getPrice(), 1));
         List<Product> actualProducts = getListFromIterable(instock.findAllByPrice(product.getPrice()));
         assertEquals(2, actualProducts.size());
-        assertTrue(actualProducts.stream().allMatch(p -> p.getPrice() == product.getPrice()));
+        assertTrue(actualProducts.stream().allMatch(p -> p.getPrice() == product.getPrice())); // Predicate Boolean
     }
 
     @Test
@@ -190,6 +201,7 @@ public class ProductStockTest {
                 .collect(Collectors.toList());
 
         List<Product> actualProducts = getListFromIterable(instock.findFirstMostExpensiveProducts(expectedCount));
+
         assertEquals(expectedCount, actualProducts.size());
 
         for (int i = 0; i < actualProducts.size(); i++) {
@@ -231,6 +243,7 @@ public class ProductStockTest {
         }
 
         assertEquals(expectedProducts.size(), actualProducts.size());
+
         for (int i = 0; i < expectedProducts.size(); i++) {
             assertEquals(expectedProducts.get(i).getLabel(), actualProducts.get(i).getLabel());
         }
@@ -278,7 +291,7 @@ public class ProductStockTest {
         assertTrue(products.isEmpty());
     }
 
-    private <T> T assertNotNullReturnedObject(Supplier<T> supplier){
+    private <T> T assertNotNullReturnedObject(Supplier<T> supplier){ // no input, only result
         T result = supplier.get();
         assertNotNull(result);
         return result;
