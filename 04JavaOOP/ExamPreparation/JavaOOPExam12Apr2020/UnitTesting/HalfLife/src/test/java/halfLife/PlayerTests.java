@@ -56,7 +56,7 @@ public class PlayerTests {
         assertEquals(50, this.player.getHealth());
     }
 
-    //getGuns
+    //getGuns test unmodifiableList
     @Test(expected = UnsupportedOperationException.class)
     public void testGetGunsWhenModifyShouldThrowEx(){
         this.player.getGuns().add(gun);
