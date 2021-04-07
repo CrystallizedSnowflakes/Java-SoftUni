@@ -99,6 +99,13 @@ public class ControllerImpl implements Controller {
 
     @Override
     public String report() {
+/*        return this.players.getModels().stream()
+                .sorted(Comparator.comparing(f -> f.getClass().getSimpleName()))
+                .sorted(Comparator.comparingInt(Player::getHealth).reversed())
+                .sorted(Comparator.comparing(Player::getUsername))
+                .map(Object::toString)
+                .collect(Collectors.joining(System.lineSeparator()));*/
+
         StringBuilder sb = new StringBuilder();
         this.players.getModels().stream()
                 .sorted(this.comparator)

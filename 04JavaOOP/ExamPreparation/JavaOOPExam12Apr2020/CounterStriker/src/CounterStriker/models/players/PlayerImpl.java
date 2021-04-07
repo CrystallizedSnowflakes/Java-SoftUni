@@ -74,17 +74,17 @@ public abstract class PlayerImpl implements Player{
 
     @Override
     public void takeDamage(int points) {
-/*        int healthDamage = points > this.armor ? points - this.armor : 0;
+        int healthDamage = points > this.armor ? points - this.armor : 0;
         this.setArmor(Math.max(this.armor - points, 0));
-        this.setHealth(Math.max(this.health - healthDamage, 0));*/
+        this.setHealth(Math.max(this.health - healthDamage, 0));
 
-        if (points > this.getArmor()) {
+/*        if (points > this.getArmor()) {
             points -= this.getArmor();
             this.setArmor(0);
             this.setHealth(Math.max(this.health - points, 0));
         } else {
             this.setArmor(this.armor - points);
-        }
+        }*/
     }
 
     @Override
