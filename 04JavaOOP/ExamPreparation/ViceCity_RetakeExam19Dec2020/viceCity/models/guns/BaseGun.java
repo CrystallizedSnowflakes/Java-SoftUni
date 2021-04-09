@@ -13,7 +13,7 @@ public abstract class BaseGun implements Gun{
         this.setName(name);
         this.setBulletsPerBarrel(bulletsPerBarrel);
         this.setTotalBullets(totalBullets);
-        this.canFire = true;
+        this.canFire = canFire();
     }
 
     private void setName(String name) {
@@ -35,10 +35,6 @@ public abstract class BaseGun implements Gun{
             throw new IllegalArgumentException(TOTAL_BULLETS_LESS_THAN_ZERO);
         }
         this.totalBullets = totalBullets;
-    }
-
-    protected void setCanFire(boolean canFire){
-        this.canFire = canFire;
     }
 
     @Override

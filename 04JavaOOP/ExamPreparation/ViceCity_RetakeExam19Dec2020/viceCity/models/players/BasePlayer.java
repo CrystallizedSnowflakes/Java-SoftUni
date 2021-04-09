@@ -55,6 +55,7 @@ public abstract class BasePlayer implements Player{
 
     @Override
     public void takeLifePoints(int points) {
+        //	Player's life points should not drop below zero
         this.lifePoints = Math.max(0, this.lifePoints - points);
     }
 }

@@ -13,37 +13,46 @@ public class GangNeighbourhood implements Neighbourhood{
     @Override
     public void action(Player mainPlayer, Collection<Player> civilPlayers) {
         Repository<Gun> gunRepository = mainPlayer.getGunRepository();
-        Deque<Player> players = new ArrayDeque<>(civilPlayers);
-        Deque<Gun> guns = new ArrayDeque<>(gunRepository.getModels());
+        Deque<Player> civilians = new ArrayDeque<>(civilPlayers); //FIFO queue
+        Deque<Gun> guns = new ArrayDeque<>(gunRepository.getModels()); //FIFO queue
 
-        Player player = players.poll();
-        Gun gun = guns.poll();
-        while (player != null && gun != null){
-            while (gun.canFire() && player.isAlive()) {
-                int fire = gun.fire();
-                player.takeLifePoints(fire);
+        // mainPlayer attack first
+        Player civilian = civilians.poll(); // returns null if the queue is empty
+        Gun enemyGun = guns.poll();
+        // shooting
+        /** The main player stops shooting only if he runs out of guns or until all the civil players are dead*/
+        while ( civilian != null && enemyGun != null ){
+
+            while (enemyGun.canFire() && civilian.isAlive()) {
+                int bulletsPerShot = enemyGun.fire();
+                civilian.takeLifePoints(bulletsPerShot);
             }
 
-            if (gun.canFire()){
-                player = players.poll();
-            } else if (player.isAlive()){
-                gun = guns.poll();
+            // after the shooting
+            if (enemyGun.canFire()){
+                civilian = civilians.poll(); // take next civilian and continue shooting
+            } else if (civilian.isAlive()){
+                enemyGun = guns.poll(); // take next gun and continue shooting
             }
         }
 
-        for (Player civilPlayer : civilPlayers) {
+        // civilians attack second
+        for (Player civilPlayer : civilPlayers) { //Collection
+
             if (civilPlayer.isAlive()){
-                Deque<Gun> playerGuns = new ArrayDeque<>(civilPlayer.getGunRepository().getModels());
-                Gun playerGun = playerGuns.poll();
-                while (playerGun != null){
-                    while (playerGun.canFire() && mainPlayer.isAlive()){
-                        int fire = playerGun.fire();
-                        mainPlayer.takeLifePoints(fire);
+                Deque<Gun> civiliansGuns = new ArrayDeque<>(civilPlayer.getGunRepository().getModels());
+                Gun civilianGun = civiliansGuns.poll();
+                while (civilianGun != null){
+
+                    // If the main player dies, the whole action ends
+                    while (civilianGun.canFire() && mainPlayer.isAlive()){
+                        int bulletsPerShot = civilianGun.fire();
+                        mainPlayer.takeLifePoints(bulletsPerShot);
                     }
-                    if (!mainPlayer.isAlive()){
+                    if (!mainPlayer.isAlive()){ // mainPlayer is dead
                         return;
                     }
-                    playerGun = playerGuns.poll();
+                    civilianGun = civiliansGuns.poll(); // take next gun and continue shooting
                 }
             }
         }
