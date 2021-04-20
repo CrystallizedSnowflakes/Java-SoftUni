@@ -1,15 +1,15 @@
 package aquarium.entities.fish;
 
 public class SaltwaterFish extends BaseFish{
-    private int size;
+    private static final int INITIAL_SIZE = 5;
 
     public SaltwaterFish(String name, String species, double price) {
         super(name, species, price);
-        this.size = 5;
+        this.setSize(INITIAL_SIZE);
     }
 
     @Override
     public void eat() {
-        this.size += 2;
+        super.setSize(super.getSize() - 2);
     }
 }

@@ -7,6 +7,4 @@ public class Ornament extends BaseDecoration{
     public Ornament() {
         super(COMFORT, PRICE);
     }
-
-
 }

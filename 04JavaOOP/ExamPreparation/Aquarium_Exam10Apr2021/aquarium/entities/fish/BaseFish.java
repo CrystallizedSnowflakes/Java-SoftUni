@@ -12,6 +12,7 @@ public abstract class BaseFish implements Fish{
         this.setName(name);
         this.setSpecies(species);
         this.setPrice(price);
+        this.setSize(size);
     }
 
     @Override
@@ -35,7 +36,11 @@ public abstract class BaseFish implements Fish{
         }
         this.price = price;
     }
-    
+
+    protected void setSize(int size){
+        this.size = size;
+    }
+
     @Override
     public void eat() {
         this.size = this.getSize() + 5;

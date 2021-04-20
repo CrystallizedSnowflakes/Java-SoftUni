@@ -7,7 +7,6 @@ import aquarium.entities.fish.Fish;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.stream.Collectors;
 
 public abstract class BaseAquarium implements Aquarium{
@@ -18,7 +17,7 @@ public abstract class BaseAquarium implements Aquarium{
 
     protected BaseAquarium(String name, int capacity) {
         this.setName(name);
-        this.setCapacity(capacity);
+        this.capacity = capacity;
         this.decorations = new ArrayList<>();
         this.fish = new ArrayList<>();
     }
@@ -28,14 +27,6 @@ public abstract class BaseAquarium implements Aquarium{
             throw new NullPointerException(ExceptionMessages.AQUARIUM_NAME_NULL_OR_EMPTY);
         }
         this.name = name;
-    }
-
-    private void setCapacity(int capacity) {
-        this.capacity = capacity;
-    }
-
-    protected int getCapacity() {
-        return this.capacity;
     }
 
     @Override
@@ -50,7 +41,7 @@ public abstract class BaseAquarium implements Aquarium{
 
     @Override
     public void addFish(Fish fish) {
-        if(this.fish.size() >= capacity){
+        if (this.capacity <= this.fish.size()){
             throw new IllegalStateException(ConstantMessages.NOT_ENOUGH_CAPACITY);
         }
         this.fish.add(fish);
@@ -68,19 +59,20 @@ public abstract class BaseAquarium implements Aquarium{
 
     @Override
     public void feed() {
-        this.fish.forEach(Fish::eat);
+        this.getFish().forEach(Fish::eat);
     }
 
     @Override
     public String getInfo() {
-        StringBuilder sb = new StringBuilder(String.format("%s (%s):", this.name, this.getClass().getSimpleName()));
+        StringBuilder sb = new StringBuilder();
+        sb.append(String.format("%s (%s):", this.name, this.getClass().getSimpleName()));
         sb.append(System.lineSeparator());
         sb.append("Fish: ");
         if (this.fish.isEmpty()){
             sb.append("none");
         } else {
             String out = this.fish.stream().map(Fish::getName).collect(Collectors.joining(" "));
-            sb.append(out);
+            sb.append(out.trim());
         }
         sb.append(System.lineSeparator());
         sb.append(String.format("Decorations: %d", this.decorations.size()));
@@ -96,6 +88,6 @@ public abstract class BaseAquarium implements Aquarium{
 
     @Override
     public Collection<Decoration> getDecorations() {
-        return Collections.unmodifiableCollection(this.decorations);
+        return this.decorations;
     }
 }

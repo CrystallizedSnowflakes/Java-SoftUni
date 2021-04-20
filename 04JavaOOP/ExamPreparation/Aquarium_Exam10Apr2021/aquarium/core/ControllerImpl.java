@@ -12,13 +12,14 @@ import aquarium.entities.fish.Fish;
 import aquarium.entities.fish.FreshwaterFish;
 import aquarium.entities.fish.SaltwaterFish;
 import aquarium.repositories.DecorationRepository;
+import aquarium.repositories.Repository;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
 public class ControllerImpl implements Controller{
-    private DecorationRepository decorations;
+    private Repository decorations;
     private Collection<Aquarium> aquariums;
 
     public ControllerImpl() {
@@ -39,7 +40,6 @@ public class ControllerImpl implements Controller{
             default:
                 throw new NullPointerException(ExceptionMessages.INVALID_AQUARIUM_TYPE);
         }
-
         this.aquariums.add(aquarium);
         return String.format(ConstantMessages.SUCCESSFULLY_ADDED_AQUARIUM_TYPE, aquariumType);
     }
@@ -124,7 +124,7 @@ public class ControllerImpl implements Controller{
 
     private Aquarium getAquarium(String aquariumName){
         return this.aquariums.stream().filter(a -> a.getName().equals(aquariumName)).findFirst().orElse(null);
-        /**
+/*
         Aquarium aquariumToFind = null;
         for (Aquarium aquarium : this.aquariums) {
             if (aquarium.getName().equals(aquariumName)){
@@ -133,6 +133,6 @@ public class ControllerImpl implements Controller{
             }
         }
         return aquariumToFind;
-         */
+*/
     }
 }
