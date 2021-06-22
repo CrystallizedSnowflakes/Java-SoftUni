@@ -44,7 +44,7 @@ public class Main {
         try(Connection connection = DriverManager.getConnection(DB_URL + DB_NAME, props)) {
             System.out.printf("DB connection created successfully: %s%s%n", DB_URL, DB_NAME);
 
-            // 4. Create prepared statement
+            // 4. Create statement
             Statement stmt = connection.createStatement();
             ResultSet rs = stmt.executeQuery(SQL_QUERY);
 
