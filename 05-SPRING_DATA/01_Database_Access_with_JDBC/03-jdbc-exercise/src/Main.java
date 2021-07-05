@@ -11,29 +11,30 @@ public class Main {
     private static final BufferedReader READER = new BufferedReader(new InputStreamReader(System.in));
     private static Connection CONNECTION;
 
-    public static void main(String[] args) throws SQLException, IOException {
+    public static void main(String[] args) {
 
-        CONNECTION = getConnection();
-
-        System.out.println("Be sure you reloaded minions_db before each exercise.\n\rEnter exercise number from 2 to 9:");
-        int exNum = Integer.parseInt(READER.readLine());
-        switch (exNum){
-            case 2: exTwoGetVillainsNames();
-                break;
-            case 3: exThreeGetMinionsNames();
-                break;
-            case 4: exFourAddMinion();
-                break;
-            case 5: exFiveChangeTownNamesCasing();
-                break;
-            case 6: exSixRemoveVillain();
-                break;
-            case 7: exSevenPrintAllMinionNames();
-                break;
-            case 8: exEightIncreaseMinionsAge();
-                break;
-            case 9: exNineIncreaseAgeStoredProcedure();
-                break;
+        try {
+            CONNECTION = getConnection();
+            System.out.println("Be sure you reloaded minions_db before each exercise.\n\rEnter exercise number from 2 to 9:");
+            int exNum = Integer.parseInt(READER.readLine());
+            switch (exNum) {
+                case 2 -> exTwoGetVillainsNames();
+                case 3 -> exThreeGetMinionsNames();
+                case 4 -> exFourAddMinion();
+                case 5 -> exFiveChangeTownNamesCasing();
+                case 6 -> exSixRemoveVillain();
+                case 7 -> exSevenPrintAllMinionNames();
+                case 8 -> exEightIncreaseMinionsAge();
+                case 9 -> exNineIncreaseAgeStoredProcedure();
+            }
+        } catch (SQLException | IOException ex){
+            ex.printStackTrace();
+        }finally {
+            try {
+                CONNECTION.close();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
         }
     }
 
@@ -53,10 +54,11 @@ DELIMITER ;
 */
         CallableStatement callableStatement = CONNECTION.prepareCall("CALL usp_get_older(?);");
         callableStatement.setInt(1, minion_id);
-        int affectedRows = callableStatement.executeUpdate();
-        PreparedStatement ps = CONNECTION.prepareStatement("SELECT name, age FROM minions;");
+        // int affectedRows = callableStatement.executeUpdate();
+        PreparedStatement ps = CONNECTION.prepareStatement("SELECT name, age FROM minions WHERE id = ?;");
+        ps.setInt(1, minion_id);
         ResultSet rs = ps.executeQuery();
-        while (rs.next()){
+        if (rs.next()){
             System.out.printf("%s %d %n", rs.getString("name"), rs.getInt("age"));
         }
     }
@@ -64,7 +66,7 @@ DELIMITER ;
     private static void exEightIncreaseMinionsAge() throws SQLException, IOException {
         System.out.println("Please enter ids:");
         List<Integer> ids = Arrays.stream(READER.readLine().split("\\s+")).map(Integer::parseInt).collect(Collectors.toList());
-        String query = "UPDATE minions SET name = CONCAT(LOWER(LEFT(name, 1)), SUBSTRING(name, 2)), age = age + 1 WHERE id = ?;";
+        String query = "UPDATE minions SET name = CONCAT(LOWER(`name`)), age = age + 1 WHERE id = ?;";
         PreparedStatement ps = CONNECTION.prepareStatement(query);
         for (int id : ids) {
             ps.setInt(1, id);
@@ -243,7 +245,7 @@ DELIMITER ;
         ResultSet rs = ps.executeQuery();
         int counter = 0;
         while (rs.next()){
-            resultSet.add(String.format("%d. %s %d %n",
+            resultSet.add(String.format("%d. %s %d%n",
                     ++counter,
                     rs.getString("name"),
                     rs.getInt("age")));
