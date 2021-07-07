@@ -136,11 +136,11 @@ DELIMITER ;
         PreparedStatement psTowns = CONNECTION.prepareStatement("SELECT name FROM towns WHERE country = ?");
         psTowns.setString(1, countryName);
         ResultSet rs = psTowns.executeQuery();
-        List<String> towns = new ArrayList<>();
+        LinkedHashSet<String> towns = new LinkedHashSet<>();
         while (rs.next()){
             towns.add(rs.getString("name"));
         }
-        System.out.println("[" + String.join(", ", towns) + "]");
+        System.out.println(towns);
     }
 
     private static void exFourAddMinion() throws IOException, SQLException {
