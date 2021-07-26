@@ -1,0 +1,72 @@
+{
+  "managers": [
+    {
+      "subordinates": [
+        {
+          "salary": 1500.00,
+          "firstName": "Tom",
+          "lastName": "Tommy"
+        },
+        {
+          "salary": 2000.00,
+          "firstName": "Gosho",
+          "lastName": "Goshov"
+        }
+      ],
+      "firstName": "Pesho",
+      "lastName": "Petrov"
+    },
+    {
+      "subordinates": [
+        {
+          "salary": 1400.00,
+          "firstName": "Manol",
+          "lastName": "Manolov"
+        }
+      ],
+      "firstName": "Gosho",
+      "lastName": "Goshov"
+    },
+    {
+      "subordinates": [
+        {
+          "salary": 1200.00,
+          "firstName": "Gichka",
+          "lastName": "Gichkova"
+        }
+      ],
+      "firstName": "Tom",
+      "lastName": "Tommy"
+    },
+    {
+      "subordinates": [],
+      "firstName": "Gichka",
+      "lastName": "Gichkova"
+    },
+    {
+      "subordinates": [],
+      "firstName": "Manol",
+      "lastName": "Manolov"
+    },
+    {
+      "subordinates": [],
+      "firstName": "New",
+      "lastName": "Employee"
+    },
+    {
+      "subordinates": [],
+      "firstName": "New",
+      "lastName": "Employee from File"
+    },
+    {
+      "subordinates": [],
+      "firstName": "Ot",
+      "lastName": "XML :)"
+    },
+    {
+      "subordinates": [],
+      "firstName": "Ot",
+      "lastName": "XML FILE:)"
+    }
+  ]
+}

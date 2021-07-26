@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<managers>
+    <manager first_name="Pesho" last_name="Petrov">
+        <subordinates>
+            <employee income="2000.00" first_name="Gosho" last_name="Goshov"/>
+            <employee income="1500.00" first_name="Tom" last_name="Tommy"/>
+        </subordinates>
+    </manager>
+    <manager first_name="Gosho" last_name="Goshov">
+        <subordinates>
+            <employee income="1400.00" first_name="Manol" last_name="Manolov"/>
+        </subordinates>
+    </manager>
+    <manager first_name="Tom" last_name="Tommy">
+        <subordinates>
+            <employee income="1200.00" first_name="Gichka" last_name="Gichkova"/>
+        </subordinates>
+    </manager>
+    <manager first_name="Gichka" last_name="Gichkova">
+        <subordinates/>
+    </manager>
+    <manager first_name="Manol" last_name="Manolov">
+        <subordinates/>
+    </manager>
+    <manager first_name="New" last_name="Employee">
+        <subordinates/>
+    </manager>
+    <manager first_name="New" last_name="Employee from File">
+        <subordinates/>
+    </manager>
+    <manager first_name="Ot" last_name="XML :)">
+        <subordinates/>
+    </manager>
+    <manager first_name="Ot" last_name="XML FILE:)">
+        <subordinates/>
+    </manager>
+</managers>
