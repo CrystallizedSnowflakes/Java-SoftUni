@@ -1,72 +1,72 @@
 [
   {
-    "fullName": "Natalie Poli",
-    "boughtCars": 2,
-    "spentMoney": 4286.76
-  },
-  {
-    "fullName": "Louann Holzworth",
-    "boughtCars": 2,
-    "spentMoney": 3873.66
-  },
-  {
-    "fullName": "Marcelle Griego",
+    "fullName": "Taina Achenbach",
     "boughtCars": 1,
-    "spentMoney": 3397.96
+    "spentMoney": 3452.14
   },
   {
     "fullName": "Emmitt Benally",
     "boughtCars": 2,
-    "spentMoney": 3359.73
-  },
-  {
-    "fullName": "Taina Achenbach",
-    "boughtCars": 2,
-    "spentMoney": 3353.58
-  },
-  {
-    "fullName": "Carri Knapik",
-    "boughtCars": 1,
-    "spentMoney": 2226.40
+    "spentMoney": 3310.76
   },
   {
     "fullName": "Carole Witman",
+    "boughtCars": 3,
+    "spentMoney": 2750.60
+  },
+  {
+    "fullName": "Ann Mcenaney",
     "boughtCars": 1,
-    "spentMoney": 1912.96
-  },
-  {
-    "fullName": "Faustina Burgher",
-    "boughtCars": 2,
-    "spentMoney": 1781.07
-  },
-  {
-    "fullName": "Sylvie Mcelravy",
-    "boughtCars": 1,
-    "spentMoney": 649.82
-  },
-  {
-    "fullName": "Brett Brickley",
-    "boughtCars": 1,
-    "spentMoney": 623.96
-  },
-  {
-    "fullName": "Garret Capron",
-    "boughtCars": 2,
-    "spentMoney": 463.26
-  },
-  {
-    "fullName": "Teddy Hobby",
-    "boughtCars": 1,
-    "spentMoney": 425.94
-  },
-  {
-    "fullName": "Audrea Cardinal",
-    "boughtCars": 1,
-    "spentMoney": 367.13
+    "spentMoney": 2253.16
   },
   {
     "fullName": "Rema Revelle",
     "boughtCars": 1,
-    "spentMoney": 215.91
+    "spentMoney": 2112.17
+  },
+  {
+    "fullName": "Cinthia Lasala",
+    "boughtCars": 2,
+    "spentMoney": 1547.13
+  },
+  {
+    "fullName": "Sylvie Mcelravy",
+    "boughtCars": 2,
+    "spentMoney": 1471.42
+  },
+  {
+    "fullName": "Yvonne Mccalla",
+    "boughtCars": 1,
+    "spentMoney": 1346.17
+  },
+  {
+    "fullName": "Oren Perlman",
+    "boughtCars": 1,
+    "spentMoney": 802.97
+  },
+  {
+    "fullName": "Teddy Hobby",
+    "boughtCars": 2,
+    "spentMoney": 559.16
+  },
+  {
+    "fullName": "Faustina Burgher",
+    "boughtCars": 1,
+    "spentMoney": 457.97
+  },
+  {
+    "fullName": "Carri Knapik",
+    "boughtCars": 1,
+    "spentMoney": 410.91
+  },
+  {
+    "fullName": "Garret Capron",
+    "boughtCars": 1,
+    "spentMoney": 268.76
+  },
+  {
+    "fullName": "Hipolito Lamoreaux",
+    "boughtCars": 1,
+    "spentMoney": 111.58
   }
 ]

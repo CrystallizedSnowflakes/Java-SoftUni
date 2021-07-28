@@ -56,12 +56,25 @@ public class Part extends BaseEntity{
         this.supplier = supplier;
     }
 
-    @ManyToMany(mappedBy = "parts")
+    @ManyToMany(mappedBy = "parts", fetch = FetchType.EAGER)
     public Set<Car> getCars() {
         return cars;
     }
 
     public void setCars(Set<Car> cars) {
         this.cars = cars;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Part part = (Part) o;
+        return Objects.equals(name, part.name) && Objects.equals(price, part.price) && Objects.equals(quantity, part.quantity) && Objects.equals(supplier, part.supplier) && Objects.equals(cars, part.cars);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, price, quantity, supplier, cars);
     }
 }

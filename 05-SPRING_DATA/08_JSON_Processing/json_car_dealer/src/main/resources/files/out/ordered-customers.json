@@ -4,16 +4,7 @@
     "name": "Louann Holzworth",
     "birthDate": "1960-10-01T00:00",
     "isYoungerDriver": false,
-    "sales": [
-      {
-        "make": "Toyota",
-        "model": "Prius"
-      },
-      {
-        "make": "Toyota",
-        "model": "Prius"
-      }
-    ]
+    "sales": []
   },
   {
     "id": 28,
@@ -29,8 +20,8 @@
     "isYoungerDriver": false,
     "sales": [
       {
-        "make": "Nissan",
-        "model": "370Z"
+        "make": "Opel",
+        "model": "Omega"
       }
     ]
   },
@@ -41,8 +32,8 @@
     "isYoungerDriver": false,
     "sales": [
       {
-        "make": "BMW",
-        "model": "X6 M"
+        "make": "Great Wall",
+        "model": "Haval M4"
       }
     ]
   },
@@ -53,12 +44,8 @@
     "isYoungerDriver": false,
     "sales": [
       {
-        "make": "Peugeot",
-        "model": "405"
-      },
-      {
-        "make": "Peugeot",
-        "model": "306"
+        "make": "Chevy",
+        "model": "Camaro"
       }
     ]
   },
@@ -70,7 +57,11 @@
     "sales": [
       {
         "make": "Ford",
-        "model": "Ranger"
+        "model": "Pinto"
+      },
+      {
+        "make": "Toyota",
+        "model": "Camry Hybrid"
       }
     ]
   },
@@ -79,12 +70,7 @@
     "name": "Audrea Cardinal",
     "birthDate": "1976-10-01T00:00",
     "isYoungerDriver": false,
-    "sales": [
-      {
-        "make": "Renault",
-        "model": "Alaskan"
-      }
-    ]
+    "sales": []
   },
   {
     "id": 11,
@@ -98,12 +84,7 @@
     "name": "Brett Brickley",
     "birthDate": "1980-10-01T00:00",
     "isYoungerDriver": false,
-    "sales": [
-      {
-        "make": "Dacia",
-        "model": "Sandero"
-      }
-    ]
+    "sales": []
   },
   {
     "id": 15,
@@ -117,7 +98,12 @@
     "name": "Hipolito Lamoreaux",
     "birthDate": "1982-08-01T00:00",
     "isYoungerDriver": false,
-    "sales": []
+    "sales": [
+      {
+        "make": "Rolls-Royce",
+        "model": "Wraith"
+      }
+    ]
   },
   {
     "id": 4,
@@ -133,8 +119,12 @@
     "isYoungerDriver": false,
     "sales": [
       {
-        "make": "Chevy",
-        "model": "Malibu"
+        "make": "Ford",
+        "model": "Torino"
+      },
+      {
+        "make": "Toyota",
+        "model": "Prius"
       }
     ]
   },
@@ -173,8 +163,16 @@
     "isYoungerDriver": false,
     "sales": [
       {
-        "make": "Ferrari",
-        "model": "250 GTO"
+        "make": "Dacia",
+        "model": "Sandero"
+      },
+      {
+        "make": "Mercedes",
+        "model": "W211"
+      },
+      {
+        "make": "Ford",
+        "model": "Pinto"
       }
     ]
   },
@@ -183,56 +181,66 @@
     "name": "Oren Perlman",
     "birthDate": "1988-10-01T00:00",
     "isYoungerDriver": false,
-    "sales": []
+    "sales": [
+      {
+        "make": "Citroen",
+        "model": "C8"
+      }
+    ]
   },
   {
     "id": 2,
     "name": "Natalie Poli",
     "birthDate": "1990-10-04T00:00",
     "isYoungerDriver": false,
-    "sales": [
-      {
-        "make": "Ferrari",
-        "model": "275"
-      },
-      {
-        "make": "Peugeot",
-        "model": "405"
-      }
-    ]
+    "sales": []
   },
   {
     "id": 3,
     "name": "Marcelle Griego",
     "birthDate": "1990-10-04T00:00",
     "isYoungerDriver": false,
-    "sales": [
-      {
-        "make": "Nissan",
-        "model": "Altima"
-      }
-    ]
+    "sales": []
   },
   {
     "id": 19,
     "name": "Yvonne Mccalla",
     "birthDate": "1992-03-02T00:00",
     "isYoungerDriver": false,
-    "sales": []
+    "sales": [
+      {
+        "make": "Mercedes",
+        "model": "A 160 CDI"
+      }
+    ]
   },
   {
     "id": 30,
     "name": "Ann Mcenaney",
     "birthDate": "1992-03-02T00:00",
     "isYoungerDriver": false,
-    "sales": []
+    "sales": [
+      {
+        "make": "Opel",
+        "model": "Corsa"
+      }
+    ]
   },
   {
     "id": 21,
     "name": "Cinthia Lasala",
     "birthDate": "1992-11-01T00:00",
     "isYoungerDriver": false,
-    "sales": []
+    "sales": [
+      {
+        "make": "Alfa Romeo",
+        "model": "75"
+      },
+      {
+        "make": "Nissan",
+        "model": "GT-R"
+      }
+    ]
   },
   {
     "id": 1,
@@ -241,12 +249,12 @@
     "isYoungerDriver": false,
     "sales": [
       {
-        "make": "Great Wall",
-        "model": "Haval H6"
+        "make": "Chevy",
+        "model": "Malibu"
       },
       {
-        "make": "Citroen",
-        "model": "C4"
+        "make": "Mercedes",
+        "model": "W212"
       }
     ]
   },
@@ -264,12 +272,8 @@
     "isYoungerDriver": false,
     "sales": [
       {
-        "make": "BMW",
-        "model": "F20"
-      },
-      {
-        "make": "Renault",
-        "model": "Alaskan"
+        "make": "Toyota",
+        "model": "Corolla"
       }
     ]
   },
@@ -280,12 +284,8 @@
     "isYoungerDriver": false,
     "sales": [
       {
-        "make": "Citroen",
-        "model": "C1"
-      },
-      {
         "make": "Nissan",
-        "model": "Versa"
+        "model": "Rogue"
       }
     ]
   },
