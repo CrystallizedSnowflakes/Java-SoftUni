@@ -1,6 +1,5 @@
 package com.example.json_car_dealer.service.impl;
 
-import com.example.json_car_dealer.model.dto.CarInfoDto;
 import com.example.json_car_dealer.model.dto.SaleWithDiscountDto;
 import com.example.json_car_dealer.model.entity.Car;
 import com.example.json_car_dealer.model.entity.Customer;
@@ -40,25 +39,20 @@ public class SaleServiceImpl implements SaleService {
             return;
         }
 
+
         for (long i = 0; i < 20; i++) {
+            List<Double> discounts = List.of(0.05, 0.1, 0.2, 0.3, 0.4, 0.5);
+            int random = ThreadLocalRandom.current().nextInt(discounts.size());
+            Double discount = discounts.get(random);
+
             Sale sale = new Sale();
-            BigDecimal[] discounts = new BigDecimal[]{
-                    BigDecimal.valueOf(0.05),
-                    BigDecimal.valueOf(0.10),
-                    BigDecimal.valueOf(0.15),
-                    BigDecimal.valueOf(0.20),
-                    BigDecimal.valueOf(0.30),
-                    BigDecimal.valueOf(0.40),
-                    BigDecimal.valueOf(0.50),
-            };
-            int random = ThreadLocalRandom.current().nextInt(0, discounts.length);
-            BigDecimal discount = discounts[random];
             Customer customer = customerService.getRandomCustomer();
             if (customer.isYoungDriver()){
-                sale.setDiscount(discount.add(BigDecimal.valueOf(0.05)));
+                sale.setDiscount(BigDecimal.valueOf(discount).add(BigDecimal.valueOf(0.05)));
             }else {
-                sale.setDiscount(discount);
+                sale.setDiscount(BigDecimal.valueOf(discount));
             }
+
             Car car = carService.getRandomCar();
             sale.setCar(car);
             sale.setCustomer(customer);

@@ -56,7 +56,7 @@ public class Part extends BaseEntity{
         this.supplier = supplier;
     }
 
-    @ManyToMany(mappedBy = "parts", fetch = FetchType.EAGER)
+    @ManyToMany(mappedBy = "parts")
     public Set<Car> getCars() {
         return cars;
     }

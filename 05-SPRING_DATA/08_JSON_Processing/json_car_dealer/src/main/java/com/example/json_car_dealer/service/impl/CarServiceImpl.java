@@ -71,7 +71,8 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public List<ToyotaDto> findCarMakesToyota(String make) {
-        return this.carRepository.findAllByMakeOrderByModelThenByTravelledDistanceDesc(make)
+        return this.carRepository
+                .findAllByMakeOrderByModelThenByTravelledDistanceDesc(make)
                 .stream()
                 .map(car -> this.modelMapper.map(car, ToyotaDto.class))
                 .collect(Collectors.toList());

@@ -71,7 +71,10 @@ public class PartServiceImpl implements PartService {
             if (isIdExists){
                 continue;
             }
-            parts.add(this.partRepository.findById(randomId).orElse(null));
+            Part part = this.partRepository
+                    .findById(randomId)
+                    .orElse(null);
+            parts.add(part);
         }
         return parts;
     }

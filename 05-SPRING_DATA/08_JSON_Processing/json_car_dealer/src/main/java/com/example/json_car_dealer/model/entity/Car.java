@@ -46,6 +46,9 @@ public class Car extends BaseEntity{
     }
 
     @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "parts_cars",
+            joinColumns = @JoinColumn(name = "car_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "part_id", referencedColumnName = "id"))
     public Set<Part> getParts() {
         return parts;
     }

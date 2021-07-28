@@ -4,26 +4,35 @@
     "name": "Louann Holzworth",
     "birthDate": "1960-10-01T00:00",
     "isYoungerDriver": false,
-    "sales": []
+    "sales": [
+      {
+        "make": "Toyota",
+        "model": "Prius"
+      },
+      {
+        "make": "Toyota",
+        "model": "Prius"
+      }
+    ]
   },
   {
     "id": 28,
     "name": "Donnetta Soliz",
     "birthDate": "1963-10-01T00:00",
     "isYoungerDriver": false,
-    "sales": [
-      {
-        "make": "Mercedes",
-        "model": "W212"
-      }
-    ]
+    "sales": []
   },
   {
     "id": 17,
     "name": "Rema Revelle",
     "birthDate": "1970-05-01T00:00",
     "isYoungerDriver": false,
-    "sales": []
+    "sales": [
+      {
+        "make": "Nissan",
+        "model": "370Z"
+      }
+    ]
   },
   {
     "id": 16,
@@ -32,8 +41,8 @@
     "isYoungerDriver": false,
     "sales": [
       {
-        "make": "Citroen",
-        "model": "Elysée"
+        "make": "BMW",
+        "model": "X6 M"
       }
     ]
   },
@@ -42,14 +51,28 @@
     "name": "Garret Capron",
     "birthDate": "1975-07-01T00:00",
     "isYoungerDriver": false,
-    "sales": []
+    "sales": [
+      {
+        "make": "Peugeot",
+        "model": "405"
+      },
+      {
+        "make": "Peugeot",
+        "model": "306"
+      }
+    ]
   },
   {
     "id": 8,
     "name": "Teddy Hobby",
     "birthDate": "1975-10-01T00:00",
     "isYoungerDriver": false,
-    "sales": []
+    "sales": [
+      {
+        "make": "Ford",
+        "model": "Ranger"
+      }
+    ]
   },
   {
     "id": 10,
@@ -58,8 +81,8 @@
     "isYoungerDriver": false,
     "sales": [
       {
-        "make": "Mercedes",
-        "model": "W202"
+        "make": "Renault",
+        "model": "Alaskan"
       }
     ]
   },
@@ -75,7 +98,12 @@
     "name": "Brett Brickley",
     "birthDate": "1980-10-01T00:00",
     "isYoungerDriver": false,
-    "sales": []
+    "sales": [
+      {
+        "make": "Dacia",
+        "model": "Sandero"
+      }
+    ]
   },
   {
     "id": 15,
@@ -103,7 +131,12 @@
     "name": "Sylvie Mcelravy",
     "birthDate": "1983-10-01T00:00",
     "isYoungerDriver": false,
-    "sales": []
+    "sales": [
+      {
+        "make": "Chevy",
+        "model": "Malibu"
+      }
+    ]
   },
   {
     "id": 7,
@@ -140,12 +173,8 @@
     "isYoungerDriver": false,
     "sales": [
       {
-        "make": "Nissan",
-        "model": "GT-R"
-      },
-      {
-        "make": "Mercedes",
-        "model": "A 160 CDI"
+        "make": "Ferrari",
+        "model": "250 GTO"
       }
     ]
   },
@@ -161,14 +190,28 @@
     "name": "Natalie Poli",
     "birthDate": "1990-10-04T00:00",
     "isYoungerDriver": false,
-    "sales": []
+    "sales": [
+      {
+        "make": "Ferrari",
+        "model": "275"
+      },
+      {
+        "make": "Peugeot",
+        "model": "405"
+      }
+    ]
   },
   {
     "id": 3,
     "name": "Marcelle Griego",
     "birthDate": "1990-10-04T00:00",
     "isYoungerDriver": false,
-    "sales": []
+    "sales": [
+      {
+        "make": "Nissan",
+        "model": "Altima"
+      }
+    ]
   },
   {
     "id": 19,
@@ -182,43 +225,37 @@
     "name": "Ann Mcenaney",
     "birthDate": "1992-03-02T00:00",
     "isYoungerDriver": false,
-    "sales": [
-      {
-        "make": "Mercedes",
-        "model": "W203"
-      }
-    ]
+    "sales": []
   },
   {
     "id": 21,
     "name": "Cinthia Lasala",
     "birthDate": "1992-11-01T00:00",
     "isYoungerDriver": false,
-    "sales": [
-      {
-        "make": "Toyota",
-        "model": "Yaris"
-      }
-    ]
+    "sales": []
   },
   {
     "id": 1,
     "name": "Emmitt Benally",
     "birthDate": "1993-11-20T00:00",
     "isYoungerDriver": false,
-    "sales": []
+    "sales": [
+      {
+        "make": "Great Wall",
+        "model": "Haval H6"
+      },
+      {
+        "make": "Citroen",
+        "model": "C4"
+      }
+    ]
   },
   {
     "id": 20,
     "name": "Nisha Markwell",
     "birthDate": "1994-04-04T00:00",
     "isYoungerDriver": false,
-    "sales": [
-      {
-        "make": "Toyota",
-        "model": "Prius"
-      }
-    ]
+    "sales": []
   },
   {
     "id": 23,
@@ -229,6 +266,10 @@
       {
         "make": "BMW",
         "model": "F20"
+      },
+      {
+        "make": "Renault",
+        "model": "Alaskan"
       }
     ]
   },
@@ -237,7 +278,16 @@
     "name": "Taina Achenbach",
     "birthDate": "1994-10-01T00:00",
     "isYoungerDriver": false,
-    "sales": []
+    "sales": [
+      {
+        "make": "Citroen",
+        "model": "C1"
+      },
+      {
+        "make": "Nissan",
+        "model": "Versa"
+      }
+    ]
   },
   {
     "id": 9,
@@ -251,11 +301,6 @@
     "name": "Daniele Zarate",
     "birthDate": "1995-10-05T00:00",
     "isYoungerDriver": false,
-    "sales": [
-      {
-        "make": "Fiat",
-        "model": "500L"
-      }
-    ]
+    "sales": []
   }
 ]
