@@ -73,7 +73,8 @@ public class CarServiceImpl implements CarService {
                 .findAllCarsPictureCountDescThenByMake()
                 .forEach(car ->
                         sb
-                        .append(String.format("Car make - %s, model - %s\n" +
+                        .append(String.format(
+                                "Car make - %s, model - %s\n" +
                                 "\tKilometers - %d\n" +
                                 "\tRegistered on - %s\n" +
                                 "\tNumber of pictures - %d",

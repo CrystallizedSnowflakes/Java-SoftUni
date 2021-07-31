@@ -21,7 +21,7 @@ public class OfferSeedDto {
     @XmlElement(name = "car")
     private CarIdDto car;
     @XmlElement(name = "seller")
-    private SellerId seller;
+    private SellerIdDto seller;
 
     @Size(min = 5)
     public String getDescription() {
@@ -65,11 +65,11 @@ public class OfferSeedDto {
         this.car = car;
     }
 
-    public SellerId getSeller() {
+    public SellerIdDto getSeller() {
         return seller;
     }
 
-    public void setSeller(SellerId seller) {
+    public void setSeller(SellerIdDto seller) {
         this.seller = seller;
     }
 }
