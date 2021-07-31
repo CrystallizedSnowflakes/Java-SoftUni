@@ -106,7 +106,7 @@ public class PassengerServiceImpl implements PassengerService {
                     .append(System.lineSeparator());
 
         });*/
-        return sb.toString();
+        return sb.toString().trim();
     }
 
     @Override
