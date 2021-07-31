@@ -83,7 +83,7 @@ public class Passenger extends BasicEntity{
 
     @Override
     public String toString() {
-        return String.format("\"Passenger %s  %s\n" +
+        return String.format("Passenger %s  %s\n" +
                         "\tEmail - %s\n" +
                         "\tPhone - %s\n" +
                         "\tNumber of tickets - %d\n",
