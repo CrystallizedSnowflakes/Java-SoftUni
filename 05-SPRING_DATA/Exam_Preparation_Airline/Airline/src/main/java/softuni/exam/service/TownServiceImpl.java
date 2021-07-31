@@ -54,7 +54,8 @@ public class TownServiceImpl implements TownService {
         Arrays
                 .stream(townSeedDTOs)
                 .filter(townSeedDto -> {
-                    boolean isValid = this.validationUtil.isValid(townSeedDto);
+                    boolean isValid = this.validationUtil.isValid(townSeedDto)
+                            && !isEntityExists(townSeedDto.getName());
                     sb
                             .append(isValid
                                     ? String.format("Successfully imported Town %s - %d",
@@ -68,6 +69,11 @@ public class TownServiceImpl implements TownService {
                 .forEach(this.townRepository::save);
 
         return sb.toString().trim();
+    }
+
+    @Override
+    public boolean isEntityExists(String name) {
+        return this.townRepository.existsByName(name);
     }
 
     @Override

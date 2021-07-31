@@ -2,9 +2,7 @@ package softuni.exam.models.dto;
 
 import com.google.gson.annotations.Expose;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.Positive;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 
 public class PassengerSeedDto {
 
@@ -24,7 +22,8 @@ public class PassengerSeedDto {
     public PassengerSeedDto() {
     }
 
-    @Size(min = 2)
+    @Size(min = 2, message = "First name should be more than 1 letter")
+    @NotBlank(message = "First name cannot be blank")
     public String getFirstName() {
         return firstName;
     }
@@ -33,7 +32,8 @@ public class PassengerSeedDto {
         this.firstName = firstName;
     }
 
-    @Size(min = 2)
+    @Size(min = 2, message = "Last name should be more than 1 letter")
+    @NotBlank(message = "Last name cannot be blank")
     public String getLastName() {
         return lastName;
     }
@@ -42,7 +42,8 @@ public class PassengerSeedDto {
         this.lastName = lastName;
     }
 
-    @Positive
+    @Positive(message = "The age must be positive number")
+    @NotNull(message = "Please enter a valid age")
     public Integer getAge() {
         return age;
     }
@@ -51,7 +52,7 @@ public class PassengerSeedDto {
         this.age = age;
     }
 
-
+    @NotBlank(message = "Phone number cannot be blank")
     public String getPhoneNumber() {
         return phoneNumber;
     }
@@ -60,7 +61,8 @@ public class PassengerSeedDto {
         this.phoneNumber = phoneNumber;
     }
 
-    @Email
+    @Email(message = "Please enter a valid email")
+    @NotBlank(message = "Email cannot be blank")
     public String getEmail() {
         return email;
     }

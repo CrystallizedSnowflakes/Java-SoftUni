@@ -14,4 +14,6 @@ public interface TownService {
 	String importTowns() throws IOException;
 
     Town findByName(String town);
+
+    boolean isEntityExists(String town);
 }

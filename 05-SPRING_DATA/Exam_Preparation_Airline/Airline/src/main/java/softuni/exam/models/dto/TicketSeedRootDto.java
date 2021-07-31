@@ -1,5 +1,6 @@
 package softuni.exam.models.dto;
 
+import javax.validation.constraints.NotEmpty;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -14,6 +15,7 @@ public class TicketSeedRootDto {
     private List<TicketSeedDto> tickets;
 
 
+    @NotEmpty
     public List<TicketSeedDto> getTickets() {
         return tickets;
     }

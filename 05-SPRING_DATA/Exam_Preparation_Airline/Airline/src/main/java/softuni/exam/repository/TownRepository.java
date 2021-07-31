@@ -10,4 +10,5 @@ public interface TownRepository  extends JpaRepository<Town, Long> {
 
     Town findByName(String name);
 
+    boolean existsByName(String name);
 }

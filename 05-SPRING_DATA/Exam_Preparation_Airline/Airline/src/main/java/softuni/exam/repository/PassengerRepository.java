@@ -16,5 +16,6 @@ public interface PassengerRepository  extends JpaRepository<Passenger, Long> {
     @Query("SELECT DISTINCT p FROM Passenger p JOIN FETCH p.tickets t " +
             "ORDER BY size(p.tickets) DESC, p.email")
     List<Passenger> findAllPassengersOrderByTicketsCountDescThenByEmail();
-    
+
+    boolean existsByEmail(String email);
 }

@@ -55,7 +55,9 @@ public class PassengerServiceImpl implements PassengerService {
         Arrays
                 .stream(passengerSeedDTOs)
                 .filter(passengerSeedDto -> {
-                    boolean isValid = this.validationUtil.isValid(passengerSeedDto);
+                    boolean isValid = this.validationUtil.isValid(passengerSeedDto)
+                            && !isEntityExists(passengerSeedDto.getEmail())
+                            && townService.isEntityExists(passengerSeedDto.getTown());
                     sb
                             .append(isValid
                                     ? String.format("Successfully imported Passenger %s - %s",
@@ -76,12 +78,22 @@ public class PassengerServiceImpl implements PassengerService {
     }
 
     @Override
+    public boolean isEntityExists(String email) {
+        return this.passengerRepository.existsByEmail(email);
+    }
+
+    @Override
     public String getPassengersOrderByTicketsCountDescendingThenByEmail() {
-        StringBuilder sb = new StringBuilder();
+
         List<Passenger> passengers = this.passengerRepository
                 .findAllPassengersOrderByTicketsCountDescThenByEmail();
-        passengers.forEach(passenger -> {
-            sb
+
+        StringBuilder sb = new StringBuilder();
+        passengers
+                .stream()
+                .map(Passenger::toString)
+                .forEach(passenger -> sb.append(passenger).append(System.lineSeparator()));
+/*            sb
                     .append(String.format("Passenger %s  %s\n" +
                             "\tEmail - {%s}\n" +
                             "\tPhone - {%s}\n" +
@@ -92,7 +104,8 @@ public class PassengerServiceImpl implements PassengerService {
                             passenger.getPhoneNumber(),
                             passenger.getTickets().size()))
                     .append(System.lineSeparator());
-        });
+
+        });*/
         return sb.toString();
     }
 

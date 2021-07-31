@@ -9,4 +9,6 @@ import softuni.exam.models.entities.Plane;
 public interface PlaneRepository  extends JpaRepository<Plane, Long> {
 
     Plane findByRegisterNumber(String registerNumber);
+
+    boolean existsByRegisterNumber(String registerNumber);
 }

@@ -56,7 +56,8 @@ public class PlaneServiceImpl implements PlaneService {
         planeSeedRootDto.getPlanes()
                 .stream()
                 .filter(planeSeedDto -> {
-                    boolean isValid = this.validationUtil.isValid(planeSeedDto);
+                    boolean isValid = this.validationUtil.isValid(planeSeedDto)
+                            && !isEntityExists(planeSeedDto.getRegisterNumber());
                     sb
                             .append(isValid ?
                                     String.format("Successfully imported Plane %s",
@@ -70,6 +71,11 @@ public class PlaneServiceImpl implements PlaneService {
                 .forEach(this.planeRepository::save);
 
         return sb.toString().trim();
+    }
+
+    @Override
+    public boolean isEntityExists(String registerNumber) {
+        return this.planeRepository.existsByRegisterNumber(registerNumber);
     }
 
     @Override

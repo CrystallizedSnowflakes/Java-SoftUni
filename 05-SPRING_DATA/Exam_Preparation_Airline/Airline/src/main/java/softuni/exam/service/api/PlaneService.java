@@ -15,5 +15,7 @@ public interface PlaneService {
 	
 	String importPlanes() throws JAXBException, FileNotFoundException;
 
+    boolean isEntityExists(String registerNumber);
+
     Plane findByRegisterNumber(String registerNumber);
 }

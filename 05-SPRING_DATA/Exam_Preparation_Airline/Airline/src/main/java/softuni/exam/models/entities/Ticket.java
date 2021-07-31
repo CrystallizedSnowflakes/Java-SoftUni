@@ -73,7 +73,7 @@ public class Ticket extends BasicEntity{
         this.passenger = passenger;
     }
 
-    @OneToOne
+    @ManyToOne
     public Plane getPlane() {
         return plane;
     }
@@ -81,4 +81,6 @@ public class Ticket extends BasicEntity{
     public void setPlane(Plane plane) {
         this.plane = plane;
     }
+
+
 }

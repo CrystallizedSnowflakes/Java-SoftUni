@@ -1,5 +1,7 @@
 package softuni.exam.models.dto;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -18,6 +20,7 @@ public class PlaneSeedDto {
 
 
     @Size(min = 5)
+    @NotBlank
     public String getRegisterNumber() {
         return registerNumber;
     }
@@ -27,6 +30,7 @@ public class PlaneSeedDto {
     }
 
     @Positive
+    @NotNull
     public Integer getCapacity() {
         return capacity;
     }
@@ -36,6 +40,7 @@ public class PlaneSeedDto {
     }
 
     @Size(min = 2)
+    @NotBlank
     public String getAirline() {
         return airline;
     }

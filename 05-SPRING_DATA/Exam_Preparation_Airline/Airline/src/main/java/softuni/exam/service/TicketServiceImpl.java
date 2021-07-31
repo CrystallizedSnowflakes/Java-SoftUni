@@ -70,7 +70,12 @@ public class TicketServiceImpl implements TicketService {
         ticketSeedRootDTOs.getTickets()
                 .stream()
                 .filter(ticketSeedDto -> {
-                    boolean isValid = this.validationUtil.isValid(ticketSeedDto);
+                    boolean isValid = this.validationUtil.isValid(ticketSeedDto)
+                            && !isEntityExists(ticketSeedDto.getSerialNumber())
+                            && this.townService.isEntityExists(ticketSeedDto.getFromTown().getName())
+                            && this.townService.isEntityExists(ticketSeedDto.getToTown().getName())
+                            && this.passengerService.isEntityExists(ticketSeedDto.getPassenger().getEmail())
+                            && this.planeService.isEntityExists(ticketSeedDto.getPlane().getRegisterNumber());
                     sb
                             .append(isValid
                                     ? String.format("Successfully imported Ticket %s - %s",
@@ -91,5 +96,9 @@ public class TicketServiceImpl implements TicketService {
                 .forEach(this.ticketRepository::save);
 
         return sb.toString().trim();
+    }
+
+    private boolean isEntityExists(String serialNumber) {
+        return this.ticketRepository.existsBySerialNumber(serialNumber);
     }
 }

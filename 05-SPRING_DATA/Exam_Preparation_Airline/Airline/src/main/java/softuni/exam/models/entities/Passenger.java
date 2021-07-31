@@ -80,4 +80,16 @@ public class Passenger extends BasicEntity{
     public void setTickets(Set<Ticket> tickets) {
         this.tickets = tickets;
     }
+
+    @Override
+    public String toString() {
+        return String.format("\"Passenger %s  %s\n" +
+                        "\tEmail - %s\n" +
+                        "\tPhone - %s\n" +
+                        "\tNumber of tickets - %d\n",
+                this.getFirstName(), this.getLastName(),
+                this.getEmail(),
+                this.getPhoneNumber(),
+                this.getTickets().size());
+    }
 }
