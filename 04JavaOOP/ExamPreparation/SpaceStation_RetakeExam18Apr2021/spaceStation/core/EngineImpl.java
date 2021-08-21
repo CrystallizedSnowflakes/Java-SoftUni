@@ -6,6 +6,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
+import java.util.List;
 
 public class EngineImpl implements Engine {
     private Controller controller;
@@ -81,6 +82,9 @@ public class EngineImpl implements Engine {
     private String addPlanet(String[] data) {
         String[] items = Arrays.stream(data).skip(1).toArray(String[]::new);
         return this.controller.addPlanet(data[0], items);
+
+        //List<String> list = Arrays.asList(data).subList(1, data.length);
+        //return this.controller.addPlanet(data[0], list.toArray(new String[0]));
     }
 
     private String addAstronaut(String[] data) {

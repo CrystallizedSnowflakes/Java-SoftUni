@@ -13,15 +13,14 @@ import spaceStation.models.planets.Planet;
 import spaceStation.models.planets.PlanetImpl;
 import spaceStation.repositories.AstronautRepository;
 import spaceStation.repositories.PlanetRepository;
-import spaceStation.repositories.Repository;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class ControllerImpl implements Controller {
-    private Repository<Astronaut> astronauts;
-    private Repository<Planet> planets;
+    private AstronautRepository astronauts;
+    private PlanetRepository planets;
     private int exploredPlanetsCount;
 
     public ControllerImpl() {
@@ -52,8 +51,9 @@ public class ControllerImpl implements Controller {
 
     @Override
     public String addPlanet(String planetName, String... items) {
+        List<String> itemList = Arrays.asList(items);
         Planet planet = new PlanetImpl(planetName);
-        planet.getItems().addAll(Arrays.asList(items));
+        planet.getItems().addAll(itemList);
         this.planets.add(planet);
         return String.format(ConstantMessages.PLANET_ADDED, planetName);
     }
@@ -73,22 +73,18 @@ public class ControllerImpl implements Controller {
         List<Astronaut> astronautsAboveSixtyOxygen = this.astronauts.getModels().stream()
                 .filter(a -> a.getOxygen() > 60)
                 .collect(Collectors.toList());
-        int initialSize = astronautsAboveSixtyOxygen.size();
 
         if (astronautsAboveSixtyOxygen.isEmpty()){
             throw new IllegalArgumentException(ExceptionMessages.PLANET_ASTRONAUTS_DOES_NOT_EXISTS);
         }
 
+        int countBeforeMission = astronautsAboveSixtyOxygen.size();
         Planet planetByName = this.planets.findByName(planetName);
         Mission mission = new MissionImpl();
         mission.explore(planetByName, astronautsAboveSixtyOxygen);
-
-        List<Astronaut> aliveAstronauts = astronautsAboveSixtyOxygen.stream()
-                .filter(a -> a.getOxygen() > 60)
-                .collect(Collectors.toList());
-
-        int deadAstronauts = initialSize - aliveAstronauts.size();
         exploredPlanetsCount++;
+        int aliveAstronauts = astronautsAboveSixtyOxygen.size();
+        int deadAstronauts = countBeforeMission - aliveAstronauts;
         return String.format(ConstantMessages.PLANET_EXPLORED, planetName, deadAstronauts);
     }
 

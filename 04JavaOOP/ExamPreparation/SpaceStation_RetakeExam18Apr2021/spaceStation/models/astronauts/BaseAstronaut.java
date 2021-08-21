@@ -7,7 +7,7 @@ import spaceStation.models.bags.Bag;
 public abstract class BaseAstronaut implements Astronaut{
     private String name;
     private double oxygen;
-    private Backpack bag;
+    private Bag bag;
 
     protected BaseAstronaut(String name, double oxygen) {
         this.setName(name);
@@ -51,7 +51,9 @@ public abstract class BaseAstronaut implements Astronaut{
 
     @Override
     public void breath() {
+        // Astronaut's oxygen should not drop below zero
         this.oxygen = Math.max(0, this.oxygen - 10);
+        //this.setOxygen(this.oxygen - 10);
     }
 
 }

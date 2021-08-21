@@ -5,9 +5,10 @@ import spaceStation.models.astronauts.Astronaut;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 
 public class AstronautRepository implements Repository<Astronaut>{
-    private Collection<Astronaut> astronauts;
+    private List<Astronaut> astronauts;
 
     public AstronautRepository() {
         this.astronauts = new ArrayList<>();
@@ -20,7 +21,9 @@ public class AstronautRepository implements Repository<Astronaut>{
 
     @Override
     public void add(Astronaut astronaut) {
-        this.astronauts.add(astronaut);
+        if (this.astronauts.stream().noneMatch(a -> a.getName().equals(astronaut.getName()))) {
+            this.astronauts.add(astronaut);
+        }
     }
 
     @Override
