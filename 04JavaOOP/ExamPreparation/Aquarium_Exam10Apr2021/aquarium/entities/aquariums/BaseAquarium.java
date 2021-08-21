@@ -7,16 +7,18 @@ import aquarium.entities.fish.Fish;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.stream.Collectors;
 
 public abstract class BaseAquarium implements Aquarium{
+
     private String name;
     private int capacity;
-    private Collection<Decoration> decorations;
-    private Collection<Fish> fish;
+    private List<Decoration> decorations;
+    private List<Fish> fish;
 
     protected BaseAquarium(String name, int capacity) {
-        this.setName(name);
+        setName(name);
         this.capacity = capacity;
         this.decorations = new ArrayList<>();
         this.fish = new ArrayList<>();
@@ -24,14 +26,16 @@ public abstract class BaseAquarium implements Aquarium{
 
     private void setName(String name) {
         if (name == null || name.trim().isEmpty()){
-            throw new NullPointerException(ExceptionMessages.AQUARIUM_NAME_NULL_OR_EMPTY);
+            throw new IllegalArgumentException(ExceptionMessages.AQUARIUM_NAME_NULL_OR_EMPTY);
         }
         this.name = name;
     }
 
     @Override
     public int calculateComfort() {
-        return this.decorations.stream().mapToInt(Decoration::getComfort).sum();
+        return this.decorations.stream()
+                .mapToInt(Decoration::getComfort)
+                .sum();
     }
 
     @Override
@@ -41,8 +45,14 @@ public abstract class BaseAquarium implements Aquarium{
 
     @Override
     public void addFish(Fish fish) {
-        if (this.capacity <= this.fish.size()){
-            throw new IllegalStateException(ConstantMessages.NOT_ENOUGH_CAPACITY);
+        if (this.capacity == this.fish.size()){
+            throw new IllegalArgumentException(ConstantMessages.NOT_ENOUGH_CAPACITY);
+        }
+
+        String fishWatertype = fish.getClass().getSimpleName().replaceAll("Fish", "");
+
+        if (!this.getClass().getSimpleName().contains(fishWatertype)){
+            throw new IllegalStateException(ConstantMessages.WATER_NOT_SUITABLE);
         }
         this.fish.add(fish);
     }
@@ -59,35 +69,38 @@ public abstract class BaseAquarium implements Aquarium{
 
     @Override
     public void feed() {
-        this.getFish().forEach(Fish::eat);
+        for (Fish fish : this.fish){
+            fish.eat();
+        }
     }
 
     @Override
     public String getInfo() {
         StringBuilder sb = new StringBuilder();
-        sb.append(String.format("%s (%s):", this.name, this.getClass().getSimpleName()));
-        sb.append(System.lineSeparator());
-        sb.append("Fish: ");
-        if (this.fish.isEmpty()){
-            sb.append("none");
-        } else {
-            String out = this.fish.stream().map(Fish::getName).collect(Collectors.joining(" "));
-            sb.append(out.trim());
-        }
-        sb.append(System.lineSeparator());
-        sb.append(String.format("Decorations: %d", this.decorations.size()));
-        sb.append(System.lineSeparator());
-        sb.append(String.format("Comfort: %d", this.calculateComfort()));
+        String fishOutput = this.fish.isEmpty()
+                ? "none"
+                :  this.fish.stream()
+                        .map(Fish::getName)
+                        .collect(Collectors.joining(" "));
+        sb.append(String.format("%s (%s):%n" +
+                        "Fish: %s%n" +
+                        "Decorations: %d%n" +
+                        "Comfort: %d",
+                this.name,
+                this.getClass().getSimpleName(),
+                fishOutput,
+                this.decorations.size(),
+                calculateComfort()));
         return sb.toString().trim();
     }
 
     @Override
-    public Collection<Fish> getFish() {
+    public List<Fish> getFish() {
         return this.fish;
     }
 
     @Override
-    public Collection<Decoration> getDecorations() {
+    public List<Decoration> getDecorations() {
         return this.decorations;
     }
 }

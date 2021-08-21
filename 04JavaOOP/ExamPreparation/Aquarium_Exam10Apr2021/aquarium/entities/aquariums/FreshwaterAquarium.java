@@ -1,9 +1,9 @@
 package aquarium.entities.aquariums;
 
-public class FreshwaterAquarium extends BaseAquarium {
-    public static final int CAPACITY = 50;
+public class FreshwaterAquarium extends BaseAquarium{
+    private static final int DEFAULT_CAPACITY = 50;
 
     public FreshwaterAquarium(String name) {
-        super(name, CAPACITY);
+        super(name, DEFAULT_CAPACITY);
     }
 }

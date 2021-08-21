@@ -4,10 +4,11 @@ import aquarium.entities.decorations.Decoration;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 public class DecorationRepository implements Repository{
 
-    private Collection<Decoration> decorations;
+    private List<Decoration> decorations;
 
     public DecorationRepository() {
         this.decorations = new ArrayList<>();

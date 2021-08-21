@@ -12,23 +12,29 @@ import aquarium.entities.fish.Fish;
 import aquarium.entities.fish.FreshwaterFish;
 import aquarium.entities.fish.SaltwaterFish;
 import aquarium.repositories.DecorationRepository;
-import aquarium.repositories.Repository;
 
 import java.util.ArrayList;
-import java.util.Collection;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
+import static aquarium.common.ConstantMessages.*;
+import static aquarium.common.ExceptionMessages.*;
+
 public class ControllerImpl implements Controller{
-    private Repository decorations;
-    private Collection<Aquarium> aquariums;
+
+    private DecorationRepository decorations;
+    private Map<String, Aquarium> aquariums;
 
     public ControllerImpl() {
         this.decorations = new DecorationRepository();
-        this.aquariums = new ArrayList<>();
+        this.aquariums = new LinkedHashMap();
     }
 
     @Override
     public String addAquarium(String aquariumType, String aquariumName) {
+
         Aquarium aquarium;
         switch (aquariumType){
             case "FreshwaterAquarium":
@@ -38,10 +44,10 @@ public class ControllerImpl implements Controller{
                 aquarium = new SaltwaterAquarium(aquariumName);
                 break;
             default:
-                throw new NullPointerException(ExceptionMessages.INVALID_AQUARIUM_TYPE);
+                throw new NullPointerException(INVALID_AQUARIUM_TYPE);
         }
-        this.aquariums.add(aquarium);
-        return String.format(ConstantMessages.SUCCESSFULLY_ADDED_AQUARIUM_TYPE, aquariumType);
+        this.aquariums.put(aquariumName, aquarium);
+        return String.format(SUCCESSFULLY_ADDED_AQUARIUM_TYPE, aquariumType);
     }
 
     @Override
@@ -55,84 +61,67 @@ public class ControllerImpl implements Controller{
                 decoration = new Plant();
                 break;
             default:
-                throw new IllegalArgumentException(ExceptionMessages.INVALID_DECORATION_TYPE);
+                throw new IllegalArgumentException(INVALID_DECORATION_TYPE);
         }
         this.decorations.add(decoration);
-        return String.format(ConstantMessages.SUCCESSFULLY_ADDED_DECORATION_TYPE, type);
+        return String.format(SUCCESSFULLY_ADDED_DECORATION_TYPE, type);
     }
 
     @Override
     public String insertDecoration(String aquariumName, String decorationType) {
         Decoration decoration = this.decorations.findByType(decorationType);
         if (decoration == null){
-            throw new IllegalArgumentException(String.format(ExceptionMessages.NO_DECORATION_FOUND, decorationType));
+            throw new IllegalArgumentException(String.format(NO_DECORATION_FOUND, decorationType));
         }
-        Aquarium aquarium = getAquarium(aquariumName);
-        aquarium.addDecoration(decoration);
         this.decorations.remove(decoration);
-        return String.format(ConstantMessages.SUCCESSFULLY_ADDED_DECORATION_IN_AQUARIUM, decorationType, aquariumName);
+        this.aquariums.get(aquariumName).addDecoration(decoration);
+        return String.format(SUCCESSFULLY_ADDED_DECORATION_IN_AQUARIUM, decorationType, aquariumName);
     }
 
     @Override
     public String addFish(String aquariumName, String fishType, String fishName, String fishSpecies, double price) {
-        Aquarium aquarium = this.getAquarium(aquariumName);
         Fish fish;
-        String aquaType = aquarium.getClass().getSimpleName();
         switch (fishType){
             case "FreshwaterFish":
                 fish = new FreshwaterFish(fishName, fishSpecies, price);
-                if (aquaType.equals("FreshwaterAquarium")){
-                    aquarium.addFish(fish);
-                } else {
-                    return ConstantMessages.WATER_NOT_SUITABLE;
-                }
                 break;
             case "SaltwaterFish":
                 fish = new SaltwaterFish(fishName, fishSpecies, price);
-                if (aquaType.equals("SaltwaterAquarium")){
-                    aquarium.addFish(fish);
-                } else {
-                    return ConstantMessages.WATER_NOT_SUITABLE;
-                }
                 break;
             default:
-                throw new IllegalArgumentException(ExceptionMessages.INVALID_FISH_TYPE);
+                throw new IllegalArgumentException(INVALID_FISH_TYPE);
         }
-        return String.format(ConstantMessages.SUCCESSFULLY_ADDED_FISH_IN_AQUARIUM, fishType, aquariumName);
+
+        try{
+            Aquarium aquarium = this.aquariums.get(aquariumName);
+            aquarium.addFish(fish);
+        }catch (IllegalStateException ex){
+            ex.getMessage();
+        }
+
+        return String.format(SUCCESSFULLY_ADDED_FISH_IN_AQUARIUM, fishType, aquariumName);
     }
 
     @Override
     public String feedFish(String aquariumName) {
-        Aquarium aquarium = this.getAquarium(aquariumName);
+        Aquarium aquarium = this.aquariums.get(aquariumName);
         aquarium.feed();
-        return String.format(ConstantMessages.FISH_FED, aquarium.getFish().size());
+        return String.format(FISH_FED, aquarium.getFish().size());
     }
 
     @Override
     public String calculateValue(String aquariumName) {
-        Aquarium aquarium = getAquarium(aquariumName);
-        double sumFish = aquarium.getFish().stream().mapToDouble(Fish::getPrice).sum();
-        double sumDecorations = aquarium.getDecorations().stream().mapToDouble(Decoration::getPrice).sum();
-        double aquaPrice = sumFish + sumDecorations;
-        return String.format(ConstantMessages.VALUE_AQUARIUM, aquariumName, aquaPrice);
+        Aquarium aquarium = this.aquariums.get(aquariumName);
+        double fishPrice = aquarium.getFish().stream().mapToDouble(Fish::getPrice).sum();
+        double decorationsPrice = aquarium.getDecorations().stream().mapToDouble(Decoration::getPrice).sum();
+        double totalPrice = fishPrice + decorationsPrice;
+        return String.format(VALUE_AQUARIUM, aquariumName, totalPrice);
     }
 
     @Override
     public String report() {
-        return this.aquariums.stream().map(Aquarium::getInfo).collect(Collectors.joining(System.lineSeparator()));
-    }
-
-    private Aquarium getAquarium(String aquariumName){
-        return this.aquariums.stream().filter(a -> a.getName().equals(aquariumName)).findFirst().orElse(null);
-/*
-        Aquarium aquariumToFind = null;
-        for (Aquarium aquarium : this.aquariums) {
-            if (aquarium.getName().equals(aquariumName)){
-                aquariumToFind = aquarium;
-                break;
-            }
-        }
-        return aquariumToFind;
-*/
+        return this.aquariums.values().stream()
+                .map(Aquarium::getInfo)
+                .collect(Collectors.joining(System.lineSeparator()));
     }
 }
